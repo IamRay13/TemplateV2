@@ -643,6 +643,126 @@ RSWNY Cheektowaga
             dynamic: `CODE`
         },
 
+       parachute6Mwt: {
+            static: `Good day! Patient is due for 5-year O2 requalification. Requesting a copy of a qualifying 6-minute walk test from any year to be used in requalifying patient. For questions, you may call 484-567-0666. Thank you!
+`,
+            dynamic: `CODE`
+        },
+
+       parachuteSwo: {
+            static: `Hello, Patient is due for 60 Month Restart for their Oxygen. Please complete, sign and date attached CMN/SWO at your earliest convenience. If you have any questions, please feel free to call us at (484) 567-0666. Thank you for your help!
+`,
+            dynamic: `Good day! Just checking in on this order. We require a signed document to continue with the patient’s 5-year O2 requalification. Thank you and have a great day!`
+        },
+
+       noriDian: {
+            static: ` Noridian Same and Similar Credentials
+Username: raymond.tariao
+Password: MVSu0XdzCRT13$?!
+--------------------------
+STL GoScript
+Username: raymond.adapt
+Password: MVSu0XdzCRT
+--------------------------
+Aerocare GoScript
+Username: raymond.aerocare
+Password: MVSu0XdzCRT
+`,
+            dynamic: `CODE`
+        },
+
+       pusBack: {
+            static: `[Scheduling] Checked account and SO#CODE has error message/s: 
+
+[PUT_THE_ERROR_MESSAGE_HERE]
+
+updated it, to avoid getting this account as pushback. 
+`,
+            dynamic: `CODE`
+        },
+
+       nPi: {
+            static: `1134303902
+1417968751
+1033480488
+`,
+            dynamic: `CODE`
+        },
+
+       swoRequirements: {
+            static: `•Beneficiary’s name or MBI
+•Order Date
+•General description of the item
+•Quantity to be dispensed, if applicable
+•Treating Practitioner Name or NPI
+•Treating Practitioner’s signature
+`,
+            dynamic: `CODE`
+        },
+
+       walkEr: {
+            static: `[Scheduling] The patient's O2 5 YEAR RENEWAL is managed directly by the local branch representatives/branch manager. They may require credit card information from the patient to set up auto-pay, have limited availability of technicians/drivers, or need to schedule a specific delivery date to avoid conflicts with the delivery schedule. No further action is required.
+`,
+            dynamic: `THESE BRANCHES BELOW ARE TAKING CARE THEIR OWN SCHEDULING!
+
+----------------------------------------------------
+NC Mount Airy - 148 is being taken care by Holly Collins the Branch Manager, they only have 2 drivers.
+NC Mount Airy Tech - Christopher Ayers
+NC Mount Airy Tech - Garrett Richardson
+ 
+----------------------------------------------------
+All Family Medical Branches are being handled by these CSR's below.
+CSR - Rhoshanda Walker
+CSR - Anthony Cipoletti
+
+----------------------------------------------------
+Adapthealth Minnesota
+CSR - Kirstin Fennel
+
+----------------------------------------------------
+ALL RSWNY
+
+----------------------------------------------------
+WeCaremedical
+ 
+----------------------------------------------------
+Bentonville
+
+----------------------------------------------------
+Wisconsin
+
+----------------------------------------------------
+NC Statesville - 58501
+
+
+`
+        },
+
+       tranSition: {
+            static: `Hello, Candice
+
+I hope you are well. I am writing regarding a patient undergoing a O2 5 YEAR RENEWAL. Initially, the patient was set up at STLukes, and we now require your assistance in creating their account within the Aerocare, their current address is ADDRESS
+
+Patient information:
+StLukes
+CODE
+
+If additional details are needed, please let us know. Your prompt attention to this matter is greatly appreciated.
+
+Thank you and have a great day!
+`,
+            dynamic: `[Scheduling] The Aerocare system has not been created yet; I have sent a follow-up email to Candice C.`
+        },
+
+       agedAccounts: {
+            static: `[Scheduling Aged Cleanup Project]
+Old SO#CODE has been voided, 
+days in WIP State: CODE.
+New SO #CODE has been created to clear it from the aged accounts. No additional action is required at this time.
+`,
+            dynamic: `CODE`
+        },
+
        CODE: {
             static: `CODE
 `,
@@ -654,6 +774,44 @@ RSWNY Cheektowaga
 `,
             dynamic: `CODE`
         },
+
+       CODE: {
+            static: `CODE
+`,
+            dynamic: `CODE`
+        },
+
+       CODE: {
+            static: `CODE
+`,
+            dynamic: `CODE`
+        },
+
+       CODE: {
+            static: `CODE
+`,
+            dynamic: `CODE`
+        },
+
+       CODE: {
+            static: `CODE
+`,
+            dynamic: `CODE`
+        },
+
+       CODE: {
+            static: `CODE
+`,
+            dynamic: `CODE`
+        },
+
+       CODE: {
+            static: `CODE
+`,
+            dynamic: `CODE`
+        },
+
+
 
     };
 
