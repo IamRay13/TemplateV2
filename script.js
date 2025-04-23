@@ -610,8 +610,35 @@ Thank you for your assistance. I appreciate your help and look forward to your r
             dynamic: `[Scheduling] The delivery was originally scheduled for Date, but it appears that no delivery was made on that date. Sent email to CODE to ask which day if the best day for the pick-up and delivery so we can let the patient know.`
         },
 
-       CODE: {
-            static: `CODE
+       homeFill: {
+            static: `These are the local branches that cannot provide Homefills anymore.
+ 
+Marshall Tx office
+AHS Plattsburgh
+Halprin Syracuse
+Halprin Binghamton
+Halprin Canandaigua
+TN Kingsport-61540
+TN Kingsport Resp-I-Care- 61544
+TN Johnson City-61542
+TN Knoxville
+TN Maryville
+TN Oakridge
+Adapt Health - Minnesota - United
+Goulds - Bardstown
+Goulds - Clarksville
+Goulds - Dutchmans
+KY Elizabethtown - 328
+KY Lexington - 103
+KY London - 330
+KY Louisville - 327
+KY Louisville Distribution Drive - 55528
+KY Murray - 55501
+KY Pikeville - 331
+KY Richmond - 329
+KY Somerset - 55507
+NY Rochester RSWNY - 53515
+RSWNY Cheektowaga
 `,
             dynamic: `CODE`
         },
