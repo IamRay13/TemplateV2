@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Handling</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <label for="actionReason" class="dropdown-label">Action Required:</label>
+        <select id="actionReason" class="styled-dropdown">
+            <option value="">Select Action</option>
+            <option value="replacementNeeded">.Replacement is needed</option>
+            <option value="declinedReplacement">.Declined the replacement</option>
+            <option value="checkAndReplace">.Check O2 and only replace if necessary</option>
+            <option value="voiceMail">Voicemail</option>
+            <option value="mailOut">.Mail out the documents</option>
+            <option value="accountOnhold">.Account is on hold</option>
+            <option value="billingIssue">.Account is on hold billing issue</option>
+            <option value="firstTouch">First Touch</option>
+            <option value="pocAvailability">POC Availability</option>
+            <option value="poc6LPM">POC 6LPM</option>
+  <option value="disPatch">.Sent to dispatch</option>
+ <option value="electionLive">.Election Live</option>
+ <option value="electionVoicemail">.Election Voicemail</option>
+ <option value="blindDelivery">.Blind delivery</option>
+ <option value="electronicSignature">Acceptable Electronic Signature Examples</option>
+ <option value="homeFill">K0738</option>
+ <option value="reCert">RECERT/REQUAL/RELEASE TO BILL</option>
+ <option value="uploadedDocs">Uploaded Documents</option>
+ <option value="mediCare">Sent to scheduling - Medicare</option>
+ <option value="nonMed">Sent to scheduling - Non-Medicare</option>
+ <option value="branchReview">ARP Branch Review</option>
+ <option value="inQuiry">.Email, inquiry about pick-up and delivery on Weekends</option>
+ <option value="inQuiry1">.Email, best day to delivery</option>
+ <option value="coDe">ZZZcoDe</option>
+ <option value="coDe">ZZZcoDe</option>
+ <option value="coDe">ZZZcoDe</option>
+ <option value="coDe">ZZZcoDe</option>
+
+
+
+        </select>
+
+        <div id="textAreas" style="display: none;">
+            <div class="textarea-row">
+                <div>
+                    <label for="staticText" class="textarea-label">Standard Instructions:</label>
+                    <textarea id="staticText" class="styled-textarea" rows="12"></textarea>
+                </div>
+                <div>
+                    <label for="dynamicText" class="textarea-label">Scheduling Notes:</label>
+                    <textarea id="dynamicText" class="styled-textarea" rows="6"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+Create a template with a modern design. Include the following elements:
+
+Favicon: Integrate a placeholder or instructions for adding a favicon.
+Image Background: Include a placeholder or instructions for setting an image as the background of the template.
+Dropdown Menu: A single dropdown menu with the text color #FFFFFF and background color #00000080. Upon selection, it should trigger the display of two text areas below. Provide at least 10 distinct and relevant options for this dropdown menu (e.g., different reasons for replacement, patient types, etc.).
+Text Areas: Two text areas will appear after a dropdown option is selected. Both should have a text color of #FFFFFF and a background color of #00000080.
+Text Area 1 (Static): This text area will always pre-populate with the following content:
+60Month Restart
+Call ahead of time and provide the ETA.
+Do not remove any oxygen equipment included on the delivery ticket to ensure proper billing.
+
+Switch out the equipment and have the patient sign the delivery ticket (#CODE), the pickup/exchange form (#CODE), and the 60-month letter located in OTL.
+2 liter flow
+
+Set up Autopay if required.
+For any questions, call 484-567-0666.
+Text Area 2 (Dynamic): This text area will pre-populate with different content based on the selected option in the dropdown. Please provide the corresponding pre-populated text for each of the 10+ dropdown options. The content should generally follow this format, with bracketed placeholders for specific information:
+[Scheduling] Insurance checked, I explained to the patient the O2 5 YEAR RENEWAL process and the patient understood, will continue with our services and requested for a replacement for the oxygen equipment.
+
+Patient's permanent address is [CODE],
+the best phone number to contact is [CODE]
+and patient is available on [DATE] for pick-up and delivery.
+Please provide the 10+ dropdown options and their corresponding pre-populated text for the second text area, keeping in mind a modern design aesthetic for the overall template.
