@@ -763,46 +763,95 @@ New SO #CODE has been created to clear it from the aged accounts. No additional 
             dynamic: `CODE`
         },
 
-       CODE: {
-            static: `CODE
+       swoTemplate: {
+            static: `Good day,
+
+The patient is due for their 60-month Oxygen Recertification. Kindly complete the CMN, please ensure that the dates and signature should be in the same format. 
+
+Please have DOCTOR sign and fax it back to (484) 362-1480 at your earliest convenience.
+
+Feel free to call us at (484) 567-0666 if you have any questions. 
+Thank you for your prompt attention!
+`,
+            dynamic: `From: Tariao, Raymond 
+Phone: (484) 567-0666 
+Fax: (484) 362-1480
+
+Phone: 4845670666 
+Fax: 4843621480`
+        },
+
+       cmnTemplate: {
+            static: `IMPORTANT!
+
+The answer keys are located on the back of the sheet. We kindly request that the doctor accurately and completely fill out the form for insurance billing purposes on behalf of the patient, please ensure that the dates and signature should be in the same format. 
+
+Please have DOCTOR sign and fax it back to (484) 362-1480 at your earliest convenience.
+
+Feel free to call us at (484) 567-0666 if you have any questions. 
+Thank you for your prompt attention!
+`,
+            dynamic: `From: Tariao, Raymond 
+Phone: (484) 567-0666 
+Fax: (484) 362-1480
+
+Phone: 4845670666 
+Fax: 4843621480`
+        },
+
+       sixMwt: {
+            static: `Hello Good day! We would like to ask for 6MWT, Vitals showing SpO2 at 88% or below needed. Testing can be from any appointments. Call (484) 567-0666 with any questions. Thank you so much!
+
+
+This patient’s insurance is requiring new oxygen saturations to be taken. In order to qualify for portable oxygen, there are 2 qualifying methods for testing:
+1. Room air at rest sat of 88% or below
+OR
+2. Three step exercise test, documenting the following 3 sats:
+A - O2 sat at rest without oxygen
+B – O2 sat at exertion (walking or other) without oxygen. (88% or below to qualify)
+C – O2 sat at exertion WITH the prescribed liter flow of O2.
+The results of this testing must be documented in the patient’s chart along with the reason the O2 was ordered, and a copy of these chart notes should be faxed to (484) 362-1480
 `,
             dynamic: `CODE`
         },
 
-       CODE: {
-            static: `CODE
+       humanaLookup: {
+            static: `[Scheduling] The insurance policy has been updated to reflect the correct payer’s name, as verified through the Humana Lookup.
 `,
             dynamic: `CODE`
         },
 
-       CODE: {
-            static: `CODE
+       reKey: {
+            static: `4/24/2025 - Rekey to show the rental equipment the patient has. 
+
+REKEYED SO#CODE: Rekey to show the rental equipment the patient has.
+`,
+            dynamic: `PT NAME: CODE 
+PT ID: CODE 
+SALES ORDER: CODE 
+BT DATABASE: STLukes/OHH/Aerocare`
+        },
+
+       rekeyedOrder: {
+            static: `Rekeyed order [CODE] can't be confirmed because of error/s. ERROR
+ERROR
+Updated it and it's good to go.
 `,
             dynamic: `CODE`
         },
 
-       CODE: {
-            static: `CODE
+       missingTickets: {
+            static: `O2 5 YEAR RENEWAL / MISSING DELIVERY TICKETS AND 60MONTH LETTER
 `,
-            dynamic: `CODE`
-        },
+            dynamic: `Hello, Michele!
 
-       CODE: {
-            static: `CODE
-`,
-            dynamic: `CODE`
-        },
+I hope this email finds you well. I am writing to inquire if you could assist a patient residing at [ADDRESS].
 
-       CODE: {
-            static: `CODE
-`,
-            dynamic: `CODE`
-        },
+There was a confirmed pickup/exchange on [DATE] for the O2 5-Year RUL. However, we do not have the delivery ticket or the 60-month letter on file. Could you please confirm if we have these documents in the local office?
 
-       CODE: {
-            static: `CODE
-`,
-            dynamic: `CODE`
+If additional details are needed, please let us know. Your prompt attention to this matter is greatly appreciated.
+
+Thank you and have a great day!`
         },
 
        CODE: {
