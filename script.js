@@ -763,7 +763,7 @@ New SO #CODE has been created to clear it from the aged accounts. No additional 
             dynamic: `CODE`
         },
 
-       swoTemplate: {
+       templateSwo: {
             static: `Good day,
 
 The patient is due for their 60-month Oxygen Recertification. Kindly complete the CMN, please ensure that the dates and signature should be in the same format. 
@@ -781,7 +781,7 @@ Phone: 4845670666
 Fax: 4843621480`
         },
 
-       cmnTemplate: {
+       templateCmn: {
             static: `IMPORTANT!
 
 The answer keys are located on the back of the sheet. We kindly request that the doctor accurately and completely fill out the form for insurance billing purposes on behalf of the patient, please ensure that the dates and signature should be in the same format. 
