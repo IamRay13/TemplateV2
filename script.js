@@ -486,7 +486,11 @@ SB flipped to Restart Scheduled.
 `,
             dynamic: `5-YR RUL is not due until the DATE. Please do not schedule it until then.
 
-2LPM via NC Continuous / 60Month Restart
+2LPM Oxygen Via NC At rest
+2LPM Oxygen Via NC with exertion
+2LPM via NC Continuous
+2LPM via NC Hours of Sleep & PRN 
+2LPM Bled into PAP / 60Month Restart
 -----------------------------------------------
 Please have patient sign 60-month letter when completing exchange/restart located in OTL.
 -----------------------------------------------
@@ -506,7 +510,10 @@ OXY PORTABILITY
 BL-E0443
 
 2LPM Oxygen Via NC At rest
-2LPM Oxygen Via NC with exertion`
+2LPM Oxygen Via NC with exertion
+2LPM via NC Continuous
+2LPM via NC Hours of Sleep & PRN 
+2LPM Bled into PAP`
         },
 
        nonMed: {
@@ -525,7 +532,11 @@ SB flipped to Restart Scheduled.
 `,
             dynamic: `5-YR RUL is not due until the DATE. Please do not schedule it until then.
 
-2LPM via NC Continuous / 60Month Restart
+2LPM Oxygen Via NC At rest
+2LPM Oxygen Via NC with exertion
+2LPM via NC Continuous
+2LPM via NC Hours of Sleep & PRN 
+2LPM Bled into PAP / 60Month Restart
 -----------------------------------------------
 Please have patient sign 60-month letter when completing exchange/restart located in OTL.
 -----------------------------------------------
@@ -545,7 +556,10 @@ OXY PORTABILITY
 BL-E0443
 
 2LPM Oxygen Via NC At rest
-2LPM Oxygen Via NC with exertion`
+2LPM Oxygen Via NC with exertion
+2LPM via NC Continuous
+2LPM via NC Hours of Sleep & PRN 
+2LPM Bled into PAP`
         },
 
        branchReview: {
@@ -832,7 +846,19 @@ REKEYED SO#CODE: Rekey to show the rental equipment the patient has.
             dynamic: `PT NAME: CODE 
 PT ID: CODE 
 SALES ORDER: CODE 
-BT DATABASE: STLukes/OHH/Aerocare`
+BT DATABASE: STLukes/OHH/Aerocare
+
+BL-E1390-5LPM
+BL-K0738
+BL-E1392
+OXY PORTABILITY
+BL-E0443
+
+2LPM Oxygen Via NC At rest
+2LPM Oxygen Via NC with exertion
+2LPM via NC Continuous
+2LPM via NC Hours of Sleep & PRN 
+2LPM Bled into PAP`
         },
 
        rekeyedOrder: {
