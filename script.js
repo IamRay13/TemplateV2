@@ -873,8 +873,12 @@ If you require any additional details, please let me know. Thank you very much f
 Thank you, and have a great day!`
         },
 
-	           CODE: {
-            static: `CODE
+	           highLiterflow: {
+            static: `Medicare typically requires more than just a prescription to document that a patient’s oxygen needs have changed, especially when an increase in the oxygen flow rate is involved. While the written prescription is necessary, it generally must be supported by clinical documentation such as progress notes that clearly demonstrate the patient’s current condition, oxygen saturation levels, and any changes that justify the need for a higher liter flow.
+
+Medicare guidelines for home oxygen therapy (for example, as detailed in the CMS Provider Documentation Manual and other related documents) require evidence of medical necessity. This evidence is often documented through face-to-face encounters and follow-up progress notes that include objective data (like blood gas results or oxygen saturation readings) and a detailed explanation of the patient’s current respiratory status. These progress notes ensure that the change from a lower to a higher liter flow is consistent with the patient’s clinical needs, which is crucial for continued coverage under Medicare.
+
+In other words, although the new prescription is an important piece of documentation, having accompanying progress notes can be essential for supporting that the patient indeed requires the higher 6–10 LPM setting. This additional documentation helps demonstrate that the increased oxygen need is based on a thorough evaluation and is in compliance with Medicare’s coverage criteria. It might also help avoid disputes during the reimbursement process.
 `,
             dynamic: `CODE`
         },
