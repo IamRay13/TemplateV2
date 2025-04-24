@@ -854,7 +854,32 @@ If additional details are needed, please let us know. Your prompt attention to t
 Thank you and have a great day!`
         },
 
-       CODE: {
+       swoCmnexpiry: {
+            static: `O2 5 YEAR RENEWAL
+`,
+            dynamic: `Hello, Shawn,
+
+I hope this email finds you well. I am writing to request your assistance with an O2 5-Year Renewal for a patient residing at [ADDRESS]. We need to follow up on the pick-up and exchange process for the patient listed below, as the SWO/CMN we have on record is about to expire on [DATE].
+
+It is important that we complete this process before the documents expire to avoid having to contact the patient's doctor again. Your help in coordinating the pick-up and ensuring a timely exchange would be greatly appreciated.
+
+Patient information:
+CODE
+SO#CODE
+PU ticket#CODE
+
+If you require any additional details, please let me know. Thank you very much for your prompt attention to this matter.
+
+Thank you, and have a great day!`
+        },
+
+	           CODE: {
+            static: `CODE
+`,
+            dynamic: `CODE`
+        },
+
+	           CODE: {
             static: `CODE
 `,
             dynamic: `CODE`
