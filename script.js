@@ -739,19 +739,22 @@ NC Statesville - 58501
         },
 
        tranSition: {
-            static: `Hello, Candice
+            static: `O2 5 YEAR RENEWAL
 
-I hope you are well. I am writing regarding a patient undergoing a O2 5 YEAR RENEWAL. Initially, the patient was set up at STLukes, and we now require your assistance in creating their account within the Aerocare, their current address is ADDRESS
+`,
+            dynamic: `Hello Michael,
 
-Patient information:
-StLukes
+I hope you are well. I am writing regarding a patient undergoing an O2 5 Year RUL renewal. Initially, the patient was set up at OHH, and we would like to inquire if you can assist with the renewal process. If so, we kindly request your help in creating their account within Aerocare.
+
+The patient’s current address is:
+CODE
+
+Patient information:  
 CODE
 
 If additional details are needed, please let us know. Your prompt attention to this matter is greatly appreciated.
 
-Thank you and have a great day!
-`,
-            dynamic: `[Scheduling] The Aerocare system has not been created yet; I have sent a follow-up email to Candice C.`
+Thank you and have a great day!`
         },
 
        agedAccounts: {
