@@ -945,7 +945,26 @@ RSWNY
 `,
             dynamic: `CODE`
         },
+	           ownScheduling: {
+            static: `Hello @
 
+We received a call from a patient under the branch BRANCHNAME. As we understand that you manage your own scheduling to complete restarts, we have updated the system with the basic information provided below:
+
+Patient Information  
+Code: CODE  
+SO: CODE  
+PU Ticket: CODE  
+
+Address: CODE  
+Best Contact Number: CODE  
+Schedule Date: CODE  
+
+Please let us know whether you would like us to send this to dispatch or if you will be reaching out to the patient directly to gather additional details, such as scheduling for another date, auto-pay setup, or credit card information.
+
+Please message us back if there is something that we missed, thank you and have a great day!
+`,
+            dynamic: `[Scheduling] Sent an email to the branch, with all the information for scheduling`
+        },
 
 
     };
