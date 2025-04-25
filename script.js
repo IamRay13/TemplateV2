@@ -912,8 +912,36 @@ In other words, although the new prescription is an important piece of documenta
             dynamic: `CODE`
         },
 
-	           CODE: {
-            static: `CODE
+	           branChes: {
+            static: `Aerocare
+ALL We Care Medical (WEC) Branches
+AR Bentonville
+AR Russellville
+AR Springdale
+SC Walterboro 
+TN Kingsport
+WI New Berlin
+WI Waukesha
+WI Fort Atkinson
+WI Racine
+OK Norman
+NC Statesville - 58501
+Michigan
+Northern Indiana
+
+StLukes
+TX Abilene
+Adapthealth Minnesota handled by CSR - Kirstin Fennel
+Adapthealth Minnesota Cambridge, New ULM and all Adapthealth MN
+NC - Winston Salem
+NC Mount Airy
+other NC branch 
+All Family Medical Branches are being handled by these CSR's below.
+CSR - Rhoshanda Walker
+CSR - Anthony Cipoletti
+
+OHH
+RSWNY
 `,
             dynamic: `CODE`
         },
