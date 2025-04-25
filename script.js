@@ -704,12 +704,27 @@ updated it, to avoid getting this account as pushback.
         },
 
        swoRequirements: {
-            static: `•Beneficiary’s name or MBI
-•Order Date
-•General description of the item
-•Quantity to be dispensed, if applicable
-•Treating Practitioner Name or NPI
-•Treating Practitioner’s signature
+            static: `Standard Written Order
++ After the face-to-face encounter, the treating physician (physician, NP, CNS, or PA) must complete a Standard Written Order, which is a standard Medicare Written Order. Documentation of the face-to-face examination and the SWO must be in the supplier's possession before the supplier delivers the oxygen items and equipment. The SWO must include all of these items:
+
+
++ Beneficiary’s patient's name or MBI
++  Order Date
++  General description of the item i.e. Concentrator, Homefill, POC E reg, OCR
++  Physician's name or the physician's NPI number
++ The ordering practitioner's signature
+
+Additional Adaphealth Order De
++ Quantity to be dispensed, if applicable
++ Treating Practitioner Name or NPI
++ Treating Practitioner’s signature
+
+Additional AdaptHealth Order Details
++ Setting - LPM or FiO2 
++ Method of administration (via nasal cannula or mask) 
++ Duration or Length of Need
++ Frequency of use - Continuous, during exertion or during sleep 
++ Practitioners Signature date
 `,
             dynamic: `CODE`
         },
