@@ -794,7 +794,7 @@ Thank you and have a great day!`
 
 [Scheduling Aged Cleanup Project] SO#CODE has been sitting in 1.4 Pending Scheduling for CODE days, created new SO#CODE to clear it from the aged accounts. No additional action is required at this time.
 `,
-            dynamic: `CODE`
+            dynamic: `Recreated`
         },
 
        templateSwo: {
