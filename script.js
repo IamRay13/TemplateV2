@@ -362,7 +362,10 @@ Proceed to drive by to the address if the patient does not answer the phone. Swi
 Set up Autopay if required.  
 For any questions, call 484-567-0666.  
 `,
-            dynamic: `[Scheduling-Attempt/s#3] We have made several attempts to contact the patient without success. Set them up for blind delivery DATE.`
+            dynamic: `[Scheduling] We have made several attempts to contact the patient without success. Set them up for blind delivery DATE.
+
+[Scheduling] The phone number that we got for the patient is disconnected/no longer in service. Set them up for blind delivery DATE.
+`
         },
 
        electronicSignature: {
