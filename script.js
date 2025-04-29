@@ -964,6 +964,100 @@ RSWNY
 `,
             dynamic: `CODE`
         },
+
+	    	           backPacking: {
+            static: `Must to bring
+ 
+- Camping Essentials  
+  - Tent  
+  - Sleeping pad  
+  - Camping chair  
+  - Headlight/Flashlight + batteries  
+ 
+- Cooking Utensils  
+  - Camping stove  
+  - Pots  
+  - Mug  
+  - Butane (2 pcs)  
+  - Torch  
+ 
+- Clothing & Personal Care  
+  - Slippers  
+  - Personal hygiene items (toothbrush, toothpaste, etc.)  
+  - Shampoo  
+  - Soap  
+  - Towel  
+  - Sunscreen  
+ 
+- Health & Safety  
+  - Eye dropper  
+  - Betadine (antiseptic)  
+ 
+- Food & Hydration  
+  - Water (2L)  
+  - Pocari Sweat (electrolyte drink)  
+ 
+- Tech & Accessories  
+  - Powerbank  
+`,
+            dynamic: `Here's how to efficiently pack everything inside your bag for balance and easy access:
+ 
+- Bottom Layer (Heavy & Bulky Items)  
+  - Sleeping pad placed flat at the base for stability  
+  - Tent tightly rolled and stacked on top of the sleeping pad  
+  - Camping chair folded and positioned vertically at the side  
+ 
+- Middle Layer (Cooking & Clothing Essentials)  
+  - Pots stacked together and placed near the back corner  
+  - Camping stove packed next to the pots for easy reach  
+  - Butane canisters stored upright to prevent leaks  
+  - Mug tucked inside the pots to save space  
+  - Torch placed near cooking items for convenience  
+  - Clothing items packed in a sealed bag for organization  
+  - Towel rolled and placed along the side  
+  - Sunscreen positioned where it's easy to retrieve  
+ 
+- Top Layer (Frequently Needed Items)  
+  - Flashlight or headlight stored in a small pouch for quick access  
+  - Slippers placed near the top for convenience  
+  - Powerbank secured in an easy-to-reach pocket  
+  - Eye dropper and Betadine stored together in a small protective bag  
+  - Water bottles placed upright at the top to avoid leaks  
+  - Pocari Sweat positioned next to the water for easy reach  
+  - Eggs packed in a secure container to prevent breakage  
+  - Canned goods positioned near the top for easy access  
+ 
+- Side & Front Pockets (Quick Grab Items)  
+  - Sunscreen stored in an outer pocket for accessibility  
+  - Flashlight positioned in a reachable side compartment  
+  - Toiletry bag placed in a front pouch for quick access  
+ 
+This arrangement ensures a balanced, accessible, and organized packing experience. Let me know if you'd like refinements!`
+        },
+
+	           CODE: {
+            static: `CODE
+`,
+            dynamic: `CODE`
+        },
+
+	           CODE: {
+            static: `CODE
+`,
+            dynamic: `CODE`
+        },
+
+	           CODE: {
+            static: `CODE
+`,
+            dynamic: `CODE`
+        },
+
+	           CODE: {
+            static: `CODE
+`,
+            dynamic: `CODE`
+        },
 	           ownScheduling: {
             static: `Hello @
 
