@@ -790,10 +790,9 @@ Thank you and have a great day!`
         },
 
        agedAccounts: {
-            static: `[Scheduling Aged Cleanup Project]
-Old SO#CODE has been voided, 
-days in WIP State: CODE.
-New SO #CODE has been created to clear it from the aged accounts. No additional action is required at this time.
+            static: `[Scheduling Aged Cleanup Project] SO#CODE has been sitting in 1.1 Intake Processing for CODE days, created new SO#CODE to clear it from the aged accounts. No additional action is required at this time.
+
+[Scheduling Aged Cleanup Project] SO#CODE has been sitting in 1.4 Pending Scheduling for CODE days, created new SO#CODE to clear it from the aged accounts. No additional action is required at this time.
 `,
             dynamic: `CODE`
         },
