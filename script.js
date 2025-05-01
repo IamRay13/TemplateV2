@@ -776,7 +776,7 @@ NC Statesville - 58501
 `,
             dynamic: `Hello Michael,
 
-I hope you are well. I am writing regarding a patient undergoing an O2 5 Year RUL renewal. Initially, the patient was set up at OHH, and we would like to inquire if you can assist with the renewal process. If so, we kindly request your help in creating their account within Aerocare.
+I hope you are well. I'm writing regarding a patient's O2 5-Year RUL. The patient was originally set up at St. Luke's, but the nearest branch is Aerocare. Could you please confirm if the patient's address falls within your service area? If so, we kindly request your assistance in creating their account at Aerocare to complete the renewal.
 
 The patient’s current address is:
 CODE
