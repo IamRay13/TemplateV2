@@ -1035,10 +1035,66 @@ RSWNY
 This arrangement ensures a balanced, accessible, and organized packing experience. Let me know if you'd like refinements!`
         },
 
-	           CODE: {
-            static: `CODE
+	           futureFirsttouch: {
+            static: `This patient is currently being reviewed by the Centralized RUL team.  If the patient calls in with any questions please transfer them to (484) 567-0666 or Purecloud call queue MedicareRestarts_adapthealth.  You can also email this team, 60monthrestarts@adapthealth.com for a status update.  
+
+Patient has had Oxygen equipment for 60 months. If patient elects to not restart all oxygen equipment will need to be picked up and the patient will have to switch providers.  
+******************************** RUL MM/DD/YYYY, please send SWO on MM/DD/YYYY ******************************
+Assessment Team Review: Q
+
+Does the insurance cap? 
+
+Testing type: 6MWT
+Patient Evaluation/Test Date:
+Patient SpO2 on room air at rest: CODE%
+Patient SpO2 on room air during exertion: CODE%
+Patient SpO2 while wearing 02 at 2LPM with exertion CODE%
+
+Testing Date: DATE, 6MWT CODE on 2LPM. Page 1
+---------------------------------
+
+Sam/Sim Results- 
+
+E1390: 
+
+Portability: 
+
+
+
 `,
-            dynamic: `CODE`
+            dynamic: `What’s needed: SWO
+
+| Item/s: E1390 &
+| RUL Date: MM/DD/YYYY
+
+| Doctor call: 0/5
+| GoScripts: 0/2
+| Parachute: 0/2
+| Patient Call: 0/3
+| Faxes sent: 0/5
+
+| Insurance: 
+| Policy Number: 
+| Checked Eligibility: Yes No
+| DNC/DNF: Yes No
+| GoScripts: Yes 
+| Parachute: Yes 
+
+| Doctor: 
+(PECOS)
+| NPI: 
+| Phone Number: 
+| Fax Number: 
+
+| Patient Evaluation/Test Date: 
+Patient Room air at rest: CODE%
+Patient Room air during exertion: CODE%
+Patient SpO2 while wearing 02 at 2LPM with exertion: CODE%
+| Diagnoses: 
+| Usage: 2LPM Oxygen via NC Continuous/Nocturnal
+| Can SWO be used: Yes No
+
+| Remark/s: We have valid testing, updated the clinical tab, and moved the testing to the OXRUL lists, but we cannot send the request for SWO/CMN until [DATE]. Flipped SB to Election pending Q.`
         },
 
 	           CODE: {
