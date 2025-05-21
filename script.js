@@ -1101,11 +1101,12 @@ Patient SpO2 while wearing 02 at 2LPM with exertion: CODE%
             static: `[FOR DOCTOR]
 Hello, this is Raymond from AdaptHealth and its family of companies on a recorded line. 
 
-I’m calling to check if Dr. [Doctors Name] is currently practicing at your office. Additionally, I’d like to confirm whether [Patient’s Name] is under Dr. [Doctors Name]’s care. 
+I’m calling to check if Dr. [NAME] is currently practicing at your office. Additionally, I’d like to confirm whether this patient is under the care of this doctor.
 
 [IF REP, FOR WHAT REASON WE ARE ASKING THIS]
 
 - We just want to ensure we have the correct details to assist the patient with her care but If you’re comfortable, that is absolutely fine. We are going to contact the patient again next time then. Have a good day!
+
 `,
             dynamic: `[VOICEMAIL] 
 
