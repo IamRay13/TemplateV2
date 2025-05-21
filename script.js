@@ -1107,7 +1107,16 @@ I’m calling to check if Dr. [Doctors Name] is currently practicing at your off
 
 - We just want to ensure we have the correct details to assist the patient with her care but If you’re comfortable, that is absolutely fine. We are going to contact the patient again next time then. Have a good day!
 `,
-            dynamic: `[IF REP DECLINED TO GIVE OUT INFORMATION]
+            dynamic: `[VOICEMAIL] 
+
+Hello, this is Raymond from AdaptHealth and its family of companies on a recorded line. 
+
+I’m reaching out to confirm whether Dr. [Doctor's Name] is currently managing care for [Patient's Name]. Please return my call at your earliest convenience at 484-567-0666
+Thank you!
+	
+-------
+
+[IF REP DECLINED TO GIVE OUT INFORMATION]
 
 - Understanding approach:  
 I understand if you’re unable to share certain details due to privacy policies. Would you be able to guide me on the best way to verify this information?
