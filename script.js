@@ -1097,16 +1097,40 @@ Patient SpO2 while wearing 02 at 2LPM with exertion: CODE%
 | Remark/s: We have valid testing, updated the clinical tab, and moved the testing to the OXRUL lists, but we cannot send the request for SWO/CMN until [DATE]. Flipped SB to Election pending Q.`
         },
 
-	           CODE: {
-            static: `CODE
+	           projectDoctor: {
+            static: `[FOR DOCTOR]
+Hello, this is Raymond from AdaptHealth and its family of companies on a recorded line. 
+
+I’m calling to check if Dr. [Doctors Name] is currently practicing at your office. Additionally, I’d like to confirm whether [Patient’s Name] is under Dr. [Doctors Name]’s care. 
 `,
-            dynamic: `CODE`
+            dynamic: `[IF REP DECLINED TO GIVE OUT INFORMATION]
+
+- Understanding approach:  
+I understand if you’re unable to share certain details due to privacy policies. Would you be able to guide me on the best way to verify this information?
+
+- Clarification approach:  
+I completely respect your office’s policies. Just to clarify, is there any way for [patient’s name] to confirm their status with Dr. [Doctor’s Name] directly?
+
+- Alternative solution approach:  
+I understand if this information can’t be shared. Is there another department or process we should go through to confirm the details we need?`
         },
 
-	           CODE: {
-            static: `CODE
+	           projectPatient: {
+            static: `[FOR PATIENT]
+Hello, this is Raymond from AdaptHealth and its family of companies on a recorded line. 
+
+Hello, [Patient's Name]. I just wanted to check, who is your current doctor? We’re trying to make sure we have the right information.
 `,
-            dynamic: `CODE`
+            dynamic: `[IF PATIENT DECLINED TO GIVE OUT INFORMATION]
+- Respectful approach:  
+I understand, and I completely respect your privacy. We just want to ensure we have the correct details to assist with your care. If you’re comfortable, even confirming your doctor’s name would be helpful.
+
+- Reassurance approach:  
+I get that this is personal, and you’re not required to share anything. We’re just trying to make sure we have the right information to help you as best as we can.
+
+- Clarifying the purpose:  
+I don’t mean to intrude—I just want to confirm your doctor’s name to ensure we’re contacting the right office for your care. If you prefer, you can share only what you’re comfortable with.
+`
         },
 
 	           CODE: {
