@@ -22,8 +22,7 @@ I’m calling to check if Dr. [NAME] is currently practicing at your office. Add
 
 I'm reaching out regarding a patient matter and would appreciate a quick confirmation. 
 
-Please return my call at your earliest convenence at 484-567-0666.  
-Thank you!
+Please call us back at 484-567-0666. Thank you!
 	
 -------
 
@@ -45,7 +44,15 @@ Hello, this is Raymond from AdaptHealth and its family of companies on a recorde
 
 Hello, I'm reaching out to confirm your pulmonologist or primary care physician to ensure our records are accurate. Could you let me know if Dr. NAME is overseeing your care?
 `,
-            dynamic: `[IF PATIENT DECLINED TO GIVE OUT INFORMATION]
+            dynamic: `[VOICEMAIL]
+
+     Hello, this is Raymond from AdaptHealth and its family of companies on a recorded line. I'm reaching out regarding an important matter. 
+
+Please call us back at 484-567-0666. Thank you!
+
+	    
+     
+     [IF PATIENT DECLINED TO GIVE OUT INFORMATION]
 - Respectful approach:  
 I understand, and I completely respect your privacy. We just want to ensure we have the correct details to assist with your care. If you’re comfortable, even confirming your doctor’s name would be helpful.
 
