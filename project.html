@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Handling</title>
+<link rel="icon" type="image/png" href="https://placehold.co/32x32/FB8B23/fff?text=TEMP">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <label for="actionReason" class="dropdown-label">Action Required:</label>
+        <select id="actionReason" class="styled-dropdown">
+            <option value="">Select Action</option>
+             <option value="projectDoctor">.Project Doctor</option>
+             <option value="projectPatient">.Project Patient</option>
+             <option value="coDe">ZZZcoDe</option>
+             <option value="coDe">ZZZcoDe</option>
+             <option value="coDe">ZZZcoDe</option>
+             <option value="coDe">ZZZcoDe</option>
+
+
+
+
+        </select>
+
+        <div id="textAreas" style="display: none;">
+            <div class="textarea-row">
+                <div>
+                    <label for="staticText" class="textarea-label">Standard Instructions:</label>
+                    <textarea id="staticText" class="styled-textarea" rows="12"></textarea>
+                </div>
+                <div>
+                    <label for="dynamicText" class="textarea-label">Scheduling Notes:</label>
+                    <textarea id="dynamicText" class="styled-textarea" rows="6"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
