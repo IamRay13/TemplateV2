@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Notepad</title>
+    <style>
+        /* --- Global Styles & Variables --- */
+        :root {
+            --primary-bg: #ffffff;
+            --secondary-bg: #f0f0f0;
+            --text-color: #333333;
+            --accent-color: #007bff;
+            --border-color: #cccccc;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --key-popup-bg: #4a4a4a;
+            --key-popup-text: #ffffff;
+        }
+
+        [data-theme="dark"] {
+            --primary-bg: #2c2c2c;
+            --secondary-bg: #383838;
+            --text-color: #f0f0f0;
+            --accent-color: #60a5fa;
+            --border-color: #555555;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --key-popup-bg: #e0e0e0;
+            --key-popup-text: #333333;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        /* --- Main Container --- */
+        .notepad-container {
+            width: 90%;
+            max-width: 800px;
+            background-color: var(--secondary-bg);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px var(--shadow-color);
+            padding: 25px;
+            transition: background-color 0.3s;
+        }
+
+        /* --- Header & Controls --- */
+        .notepad-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .notepad-header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            color: var(--accent-color);
+        }
+
+        .controls button, .controls select {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-left: 8px;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .controls button:hover, .controls select:hover {
+            background-color: #0056b3;
+        }
+        [data-theme="dark"] .controls button:hover, [data-theme="dark"] .controls select:hover {
+            background-color: #438ae3;
+        }
+
+        .controls button:active {
+            transform: scale(0.95);
+        }
+
+        /* --- Text Area --- */
+        #notepad-area {
+            width: 100%;
+            height: 400px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1em;
+            line-height: 1.6;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            box-sizing: border-box;
+            resize: vertical;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        #notepad-area:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+        [data-theme="dark"] #notepad-area:focus {
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.3);
+        }
+
+
+        /* --- Status Bar --- */
+        .status-bar {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85em;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .status-bar span {
+            margin-right: 15px;
+        }
+
+        /* --- Key Pop-up --- */
+        .key-popup {
+            position: fixed;
+            background-color: var(--key-popup-bg);
+            color: var(--key-popup-text);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 1.2em;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+            pointer-events: none; /* So it doesn't interfere with typing */
+            z-index: 1000;
+            transform: scale(0.8) translateY(10px);
+        }
+
+        .key-popup.show {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        /* --- Patient ID Display --- */
+        #patient-id-info {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: var(--primary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.9em;
+        }
+        [data-theme="dark"] #patient-id-info {
+             background-color: var(--secondary-bg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="notepad-container">
+        <div class="notepad-header">
+            <h1>Advanced Notepad</h1>
+            <div class="controls">
+                <button id="save-note">Save</button>
+                <button id="load-note">Load</button>
+                <button id="clear-note">Clear</button>
+                <button id="download-note">Download .txt</button>
+                <button id="theme-toggle">🌓</button>
+            </div>
+        </div>
+
+        <textarea id="notepad-area" placeholder="Start typing here..."></textarea>
+
+        <div class="status-bar">
+            <span id="word-count">Words: 0</span>
+            <span id="char-count">Characters: 0</span>
+        </div>
+
+        <div id="patient-id-info">Patient ID Count: Not found</div>
+    </div>
+
+    <div class="key-popup" id="key-popup-display"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const notepadArea = document.getElementById('notepad-area');
+            const saveNoteButton = document.getElementById('save-note');
+            const loadNoteButton = document.getElementById('load-note');
+            const clearNoteButton = document.getElementById('clear-note');
+            const downloadNoteButton = document.getElementById('download-note');
+            const themeToggleButton = document.getElementById('theme-toggle');
+            const wordCountDisplay = document.getElementById('word-count');
+            const charCountDisplay = document.getElementById('char-count');
+            const patientIdInfoDisplay = document.getElementById('patient-id-info');
+            const keyPopupDisplay = document.getElementById('key-popup-display');
+
+            let autoCapitalizeNext = false;
+            let lastTypedChar = '';
+
+            // --- Theme Toggle ---
+            const currentTheme = localStorage.getItem('notepad-theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                themeToggleButton.textContent = '☀️';
+            } else {
+                themeToggleButton.textContent = '🌓';
+            }
+
+            themeToggleButton.addEventListener('click', () => {
+                let theme = document.documentElement.getAttribute('data-theme');
+                if (theme === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('notepad-theme', 'dark');
+                    themeToggleButton.textContent = '☀️';
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    localStorage.setItem('notepad-theme', 'light');
+                    themeToggleButton.textContent = '🌓';
+                }
+            });
+
+            // --- Key Pop-up Functionality ---
+            let popupTimeout;
+            notepadArea.addEventListener('keydown', (e) => {
+                // We don't want to show pop-up for modifier keys, backspace, delete, arrows etc.
+                // For simplicity, we'll focus on alphanumeric and common punctuation.
+                // A more robust solution would check e.key against a list of allowed keys.
+                if (e.key.length === 1 || e.key === 'Enter' || e.key === 'Space') {
+                    let displayKey = e.key;
+                    if (e.key === ' ') displayKey = 'Space';
+                    if (e.key === 'Enter') displayKey = 'Enter';
+
+                    keyPopupDisplay.textContent = displayKey.toUpperCase();
+                    keyPopupDisplay.classList.add('show');
+
+                    // Position the popup near the cursor (simplified)
+                    // For a more accurate position, we'd need to calculate caret position.
+                    // This positions it generally in the middle of the textarea.
+                    const rect = notepadArea.getBoundingClientRect();
+                    keyPopupDisplay.style.left = `${rect.left + rect.width / 2 - 20}px`;
+                    keyPopupDisplay.style.top = `${rect.top + rect.height / 2 - 50}px`;
+
+
+                    clearTimeout(popupTimeout);
+                    popupTimeout = setTimeout(() => {
+                        keyPopupDisplay.classList.remove('show');
+                    }, 300);
+                }
+            });
+
+
+            // --- Notepad Logic ---
+            notepadArea.addEventListener('input', () => {
+                updateStatus();
+                extractAndCountPatientID();
+
+                const currentText = notepadArea.value;
+                const cursorPos = notepadArea.selectionStart;
+
+                // Auto-capitalize after period
+                if (autoCapitalizeNext && currentText.length > 0 && lastTypedChar.match(/[a-z]/)) {
+                    // Check if the character immediately after the period was lowercase
+                    // This logic is a bit tricky because 'input' event fires after the char is inserted.
+                    // We need to check the character *before* the current cursor position if a new char was added.
+
+                    let charToCapitalizeIndex = -1;
+
+                    // Find the last typed character to capitalize
+                    for (let i = cursorPos - 1; i >= 0; i--) {
+                        if (currentText[i-1] === '.' && currentText[i] && currentText[i].match(/[a-z]/)) {
+                           charToCapitalizeIndex = i;
+                           break;
+                        }
+                        if (currentText[i] === ' ') continue; // skip spaces
+                        if (currentText[i] === '.') continue; // in case of multiple periods
+                        break; // found a non-space, non-period char
+                    }
+
+
+                    if (charToCapitalizeIndex !== -1) {
+                        const before = currentText.substring(0, charToCapitalizeIndex);
+                        const char = currentText.charAt(charToCapitalizeIndex).toUpperCase();
+                        const after = currentText.substring(charToCapitalizeIndex + 1);
+                        notepadArea.value = before + char + after;
+                        notepadArea.setSelectionRange(cursorPos, cursorPos); // Restore cursor position
+                    }
+                    autoCapitalizeNext = false;
+                }
+            });
+
+            notepadArea.addEventListener('keyup', (e) => {
+                lastTypedChar = e.key; // Store the last physically typed key
+                if (e.key === '.') {
+                    autoCapitalizeNext = true;
+                } else if (e.key !== 'Shift' && e.key.length === 1 && e.key.match(/\S/)) {
+                    // If any non-space character is typed, disable autoCapitalizeNext
+                    // unless it was a period that set it.
+                    // This handles cases like ".a" vs ". A"
+                    // autoCapitalizeNext = false; // This line was causing issues, removed. Logic in 'input' is better.
+                }
+            });
+
+
+            // --- Update Word and Character Count ---
+            function updateStatus() {
+                const text = notepadArea.value;
+                charCountDisplay.textContent = `Characters: ${text.length}`;
+                const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+                wordCountDisplay.textContent = `Words: ${words.length}`;
+            }
+
+            // --- Patient ID Extraction ---
+            function extractAndCountPatientID() {
+                const text = notepadArea.value;
+                const regex = /Patient ID\s*(\d+)/gi; // Case-insensitive, global search
+                let matches = [];
+                let match;
+                while ((match = regex.exec(text)) !== null) {
+                    matches.push(match[1]); // Add the captured number
+                }
+
+                if (matches.length > 0) {
+                    patientIdInfoDisplay.textContent = `Patient ID(s) Found: ${matches.join(', ')} (Count: ${matches.length})`;
+                } else {
+                    patientIdInfoDisplay.textContent = 'Patient ID Count: Not found';
+                }
+            }
+
+            // --- Local Storage Functionality ---
+            saveNoteButton.addEventListener('click', () => {
+                localStorage.setItem('notepad-content', notepadArea.value);
+                alert('Note saved locally!');
+            });
+
+            loadNoteButton.addEventListener('click', () => {
+                const savedContent = localStorage.getItem('notepad-content');
+                if (savedContent) {
+                    notepadArea.value = savedContent;
+                    updateStatus();
+                    extractAndCountPatientID();
+                } else {
+                    alert('No saved note found.');
+                }
+            });
+
+            clearNoteButton.addEventListener('click', () => {
+                if (confirm('Are you sure you want to clear the notepad?')) {
+                    notepadArea.value = '';
+                    updateStatus();
+                    extractAndCountPatientID();
+                    localStorage.removeItem('notepad-content');
+                }
+            });
+
+            // --- Download Functionality ---
+            downloadNoteButton.addEventListener('click', () => {
+                const textToSave = notepadArea.value;
+                const blob = new Blob([textToSave], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'notepad-export.txt';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+
+
+            // Initial load
+            loadNoteButton.click(); // Try to load existing note on startup
+            updateStatus();
+            extractAndCountPatientID();
+        });
+    </script>
+</body>
+</html>
