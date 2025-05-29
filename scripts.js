@@ -18,9 +18,11 @@ I’m calling to check if Dr. [NAME] is currently practicing at your office. Add
 - We just want to ensure we have the correct details to assist the patient with her care but If you’re comfortable, that is absolutely fine. We are going to contact the patient again next time then. Have a good day!
 
 `,
-            dynamic: `Hello, this is Raymond from AdaptHealth and its family of companies on a recorded line.  
+            dynamic: `[VOICEMAIL]
 
-I'm reaching out regarding a patient matter and would appreciate a quick confirmation. 
+Hello, this is Raymond from AdaptHealth and its family of companies on a recorded line.  
+
+I'm reaching out to confirm if our mutual patient (PATIENT'S NAME), is under Dr. (DOCTOR'S NAME) care. 
 
 Please call us back at 484-567-0666. Thank you!
 	
@@ -46,9 +48,13 @@ Hello, I'm reaching out to confirm your pulmonologist or primary care physician 
 `,
             dynamic: `[VOICEMAIL]
 
-     Hello, this is Raymond from AdaptHealth and its family of companies on a recorded line. I'm reaching out regarding an important matter. 
+Hi, this is Raymond from AdaptHealth and its family of companies on a recorded line. 
 
-Please call us back at 484-567-0666. Thank you!
+This message is for (PATIENT'S NAME) regarding your durable medical equipment. 
+
+Please call us back as soon as possible at 484-567-0666 so we can update your account information. 
+
+Thank you, and have a great day!
 
 	    
      
@@ -65,7 +71,15 @@ I don’t mean to intrude—I just want to confirm your doctor’s name to ensur
         },
 
 	           projectPOA: {
-            static: `Hello, I'm reaching out to verify the patient's pulmonologist or primary care physician to ensure our records are accurate. Could you confirm if Dr. NAME is overseeing their care?
+            static: `[VOICEMAIL]
+
+Hi, this is Raymond from AdaptHealth and its family of companies on a recorded line. 
+
+This message is for (PATIENT'S NAME) regarding your durable medical equipment. 
+
+Please call us back as soon as possible at 484-567-0666 so we can update your account information. 
+
+Thank you, and have a great day!
 `,
             dynamic: `[IF PATIENT DECLINED TO GIVE OUT INFORMATION]
 - Respectful approach:  
