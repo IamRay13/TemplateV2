@@ -893,15 +893,20 @@ Updated it and it's good to go.
        missingTickets: {
             static: `O2 5 YEAR RENEWAL / MISSING DELIVERY TICKETS AND 60MONTH LETTER
 `,
-            dynamic: `Hello, Michele!
+            dynamic: `Hello,
 
-I hope this email finds you well. I am writing to inquire if you could assist a patient residing at [ADDRESS].
+I hope this email finds you well. I am writing to request confirmation on whether the address provided for our patient falls within your service area.
 
-There was a confirmed pickup/exchange on [DATE] for the O2 5-Year RUL. However, we do not have the delivery ticket or the 60-month letter on file. Could you please confirm if we have these documents in the local office?
+Additionally, there was a confirmed pickup/exchange on [DATE] for the O2 5-Year RUL. However, we do not have the delivery ticket or the 60‑month letter on file. Could you please confirm if these documents are available at the local office?
 
-If additional details are needed, please let us know. Your prompt attention to this matter is greatly appreciated.
+Patient Information:  
+• CODE  
+• SO#CODE  
+• PU ticket#CODE  
 
-Thank you and have a great day!`
+If you need any additional details, please let me know. Your prompt attention to this matter is appreciated.
+
+Thank you,`
         },
 
        swoCmnexpiry: {
