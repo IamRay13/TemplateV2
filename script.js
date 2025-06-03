@@ -59,22 +59,24 @@ and patient is available on DATE for checking the oxygen equipment.`
        mailOut: {
             static: `Subject: O2 5 YEAR RENEWAL
 
-Hello, Catherine!
+Hello,
 
-I hope this email finds you well. I am writing to inquire if you could assist a patient residing at [ADDRESS].
+I hope this email finds you well. I am writing to request confirmation on whether the address provided for our patient falls within your service area. 
 
-The patient is willing to sign the contract to complete the O2 5 YEAR RENEWAL and would like to receive the contract via postal mail. Attached are the necessary documents.
+The patient is willing to sign the contract to complete the O2 5 YEAR RENEWAL and prefers to receive the contract via postal mail.
 
-Please include a self-addressed stamped envelope for the patient to return the signed documents. 
+Attached are the necessary documents for this process. Please include a self-addressed stamped envelope for the patient to return the signed documents.
 
-Patient information:
-CODE
-SO#CODE
-PU ticket#CODE
+Patient Information:  
+• CODE  
+• SO#CODE  
+• PU ticket#CODE  
 
-If additional details are needed, please let us know. Your prompt attention to this matter is greatly appreciated.
+If further details are required, please let us know at your earliest convenience. Your prompt attention to this matter is appreciated.
 
-Thank you and have a great day!
+Thank you,
+
+
 
 `,
             dynamic: `[Scheduling] This patient is due for her 5-year requalification. We contacted the patient, she declined a replacement at this time, but willing to sign the contract for renewal but prefer to receive it via postal mail. ***Please send the RUL documents on [DATE]`
