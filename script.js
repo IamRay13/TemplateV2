@@ -120,7 +120,7 @@ Thank you for your time. If you have any questions or need assistance, please ca
 
 Hi! This is Raymond from AdaptHealth and its family of companies on a recorded line.
 
-This is about 5-year renewal of your durable medical equipment and we received the documents that we need from your doctor. Give us a call back using 484-567-0666.
+This is about 5-year renewal of your durable medical equipment and we received the documents that we need from your doctor. Give us a call back using 484-567-0666.`
 
 },
 
