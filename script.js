@@ -120,8 +120,16 @@ Thank you for your time. If you have any questions or need assistance, please ca
 
 Hi! This is Raymond from AdaptHealth and its family of companies on a recorded line.
 
-This is about 5-year renewal of your durable medical equipment and we received the documents that we need from your doctor. Give us a call back using 484-567-0666.`
-        },
+This is about 5-year renewal of your durable medical equipment and we received the documents that we need from your doctor. Give us a call back using 484-567-0666.
+
+-------------------------------------
+PATIENT QUESTIONS:
+
+Patient: I already owned this equipment.
+
+Rebutall:
+The letter explains that after five years, you have two options: either end the rental and own the equipment at which point you'll be responsible for repairs, maintenance, replacements, and supplies or continue renting, with your insurance covering all the services for your oxygen equipment.
+},
 
        billingIssue: {
             static: `Hello, Sabrina!
