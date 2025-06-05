@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notes</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='16'>📝</text></svg>">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap">
+  <!-- Marked.js for Markdown support -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    /* Reset and basic styles */
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    /* Light/Dark mode */
+    .dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+    .dark-mode .note-form,
+    .dark-mode .modal-content,
+    .dark-mode .notes-list .note {
+      background: #333;
+      color: #f0f0f0;
+      border: 1px solid #444;
+    }
+    /* Overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      z-index: -1;
+      transition: background 0.3s;
+    }
+    .dark-mode::before {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 1rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.2rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #666;
+    }
+    .dark-mode header p {
+      color: #aaa;
+    }
+    /* Patient Counter Display */
+    .counter-display {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+    /* Control Bar */
+    .control-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .control-bar button,
+    .control-bar select,
+    .control-bar input {
+      padding: 0.45rem 0.85rem;
+      font-size: 0.95rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fff;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .control-bar button:hover {
+      background: #0078D7;
+      color: #fff;
+      border-color: #0078D7;
+    }
+    .dark-mode .control-bar button,
+    .dark-mode .control-bar select,
+    .dark-mode .control-bar input {
+      background: #444;
+      border-color: #555;
+      color: #f0f0f0;
+    }
+    .dark-mode .control-bar button:hover {
+      background: #0088ff;
+      border-color: #0088ff;
+    }
+    /* Note Form */
+    .note-form {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.2rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .note-form select,
+    .note-form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin: 0.6rem 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    .note-form select:focus,
+    .note-form textarea:focus {
+      border-color: #0078D7;
+      outline: none;
+    }
+    .note-form button {
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 4px;
+      background: #0078D7;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .note-form button:hover {
+      background: #005fa3;
+    }
+    /* Notes List */
+    .notes-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .note {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s;
+    }
+    .note:hover {
+      transform: translateY(-5px);
+    }
+    .note-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .note-header h3 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+    .note-header span {
+      font-size: 0.9rem;
+      background: #e7e7e7;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+    }
+    .note-content {
+      margin: 0.8rem 0;
+      flex: 1;
+      overflow: auto;
+      font-size: 1rem;
+    }
+    .note-buttons {
+      text-align: right;
+    }
+    .note-buttons button {
+      margin-left: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .note-buttons button:hover {
+      background: #0078D7;
+      color: #fff;
+    }
+    /* Modals */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(4px);
+      background: rgba(0,0,0,0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      max-height: 70%;
+      overflow-y: auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-header h2 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    .close-modal {
+      cursor: pointer;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    /* Resize the edit note textarea */
+    #edit-note-content {
+      height: 600px;
+      width: 600px;
+      resize: none;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .modal-content {
+        max-width: 90%;
+      }
+      #edit-note-content {
+        height: 300px;
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Notes</h1>
+      <p>Create, edit, and manage your notes seamlessly</p>
+    </header>
+
+    <!-- Patient Counters -->
+    <div class="counter-display" id="patient-counters">
+      <!-- Displays: Aerocare: 0 | St. Lukes: 0 | OHH: 0 | Total: 0 -->
+    </div>
+    
+    <!-- Control Bar -->
+    <div class="control-bar">
+      <button id="toggle-theme">Toggle Light/Dark</button>
+      
+      <!-- Date Calculator -->
+      <input type="number" id="date-offset" value="90" placeholder="Days" style="width:120px;">
+      <select id="date-operation">
+        <option value="add">Add</option>
+        <option value="subtract">Subtract</option>
+      </select>
+      <button id="calc-date">Calculate Date</button>
+      <input type="text" id="date-result" readonly style="width:140px;">
+      
+      <!-- View Patient IDs -->
+      <button id="view-patient-ids">View Patient IDs</button>
+      
+      <!-- Font Controls -->
+      <select id="font-family">
+        <option value="">Select Font Family</option>
+        <option value="Roboto, sans-serif">Roboto</option>
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="'Times New Roman', serif">Times New Roman</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select>
+      <select id="font-size">
+        <option value="">Select Font Size</option>
+        <option value="14px">14px</option>
+        <option value="16px">16px</option>
+        <option value="18px">18px</option>
+        <option value="20px">20px</option>
+      </select>
+    </div>
+
+    <!-- Note Creation Form -->
+    <div class="note-form">
+      <select id="note-facility">
+        <option value="">Select Facility</option>
+        <option value="Aerocare">Aerocare</option>
+        <option value="St. Lukes">St. Lukes</option>
+        <option value="OHH">OHH</option>
+      </select>
+      <select id="note-category">
+        <option value="">Select Category</option>
+        <option value="CMN">CMN</option>
+        <option value="SWO">SWO</option>
+        <option value="Appointment Scheduled">Appointment Scheduled</option>
+        <option value="6MWT">6MWT</option>
+        <option value="Titration Sleep Study">Titration Sleep Study</option>
+        <option value="Future RUL">Future RUL</option>
+        <option value="Due RUL">Due RUL</option>
+        <option value="Letter Sent">Letter Sent</option>
+        <option value="Doctor's Information">Doctor's Information</option>
+        <option value="POC Prescription">POC Prescription</option>
+        <option value="Account is on Hold">Account is on Hold</option>
+        <option value="Prior Authorization">Prior Authorization</option>
+        <option value="Transition to another BT">Transition to another BT</option>
+        <option value="2.2 Pending delivery">2.2 Pending delivery</option>
+        <option value="2.3 Queued">2.3 Queued</option>
+        <option value="2.4 Delayed/Rescheduled">2.4 Delayed/Rescheduled</option>
+        <option value="2.5 - OTL Pushback to CS">2.5 - OTL Pushback to CS</option>
+        <option value="2.6 OTL Dispatch Rejection">2.6 OTL Dispatch Rejection</option>
+      </select>
+      <textarea id="note-content" rows="4" placeholder="Write your note in Markdown..."></textarea>
+      <div style="text-align: right;">
+        <button id="add-note">Add Note</button>
+      </div>
+    </div>
+
+    <!-- Search & Backup Controls -->
+    <div class="control-bar">
+      <input type="text" id="search-notes" placeholder="Search notes..." style="flex:1;">
+      <button id="export-notes">Export JSON</button>
+      <button id="import-notes">Import JSON</button>
+      <input type="file" id="file-input" accept="application/json" style="display:none;">
+    </div>
+
+    <!-- Notes List -->
+    <div class="notes-list" id="notes-list"></div>
+  </div>
+
+  <!-- Modal for Editing Note -->
+  <div class="modal" id="edit-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Edit Note</h2>
+        <span class="close-modal" id="close-modal">&times;</span>
+      </div>
+      <select id="edit-note-facility">
+        <option value="">Select Facility</option>
+        <option value="Aerocare">Aerocare</option>
+        <option value="St. Lukes">St. Lukes</option>
+        <option value="OHH">OHH</option>
+      </select>
+      <select id="edit-note-category">
+        <option value="">Select Category</option>
+        <option value="CMN">CMN</option>
+        <option value="SWO">SWO</option>
+        <option value="Appointment Scheduled">Appointment Scheduled</option>
+        <option value="6MWT">6MWT</option>
+        <option value="Titration Sleep Study">Titration Sleep Study</option>
+        <option value="Future RUL">Future RUL</option>
+        <option value="Due RUL">Due RUL</option>
+        <option value="Letter Sent">Letter Sent</option>
+        <option value="Doctor's Information">Doctor's Information</option>
+        <option value="POC Prescription">POC Prescription</option>
+        <option value="Account is on Hold">Account is on Hold</option>
+        <option value="Prior Authorization">Prior Authorization</option>
+        <option value="Transition to another BT">Transition to another BT</option>
+        <option value="2.2 Pending delivery">2.2 Pending delivery</option>
+        <option value="2.3 Queued">2.3 Queued</option>
+        <option value="2.4 Delayed/Rescheduled">2.4 Delayed/Rescheduled</option>
+        <option value="2.5 - OTL Pushback to CS">2.5 - OTL Pushback to CS</option>
+        <option value="2.6 OTL Dispatch Rejection">2.6 OTL Dispatch Rejection</option>
+      </select>
+      <textarea id="edit-note-content" placeholder="Edit your note in Markdown..."></textarea>
+      <div style="text-align: right; margin-top: 8px;">
+        <button id="save-note">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Viewing Patient IDs (Sorted by Facility) -->
+  <div class="modal" id="patientIDs-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Patient IDs by Facility</h2>
+        <span class="close-modal" id="close-patientIDs-modal">&times;</span>
+      </div>
+      <div id="patientIDs-list" style="margin-top: 10px; max-height:300px; overflow:auto;"></div>
+      <div style="margin-top: 10px; text-align: right;">
+        <button id="copy-patientIDs">Copy All</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let notes = JSON.parse(localStorage.getItem('notes')) || [];
+    let editNoteId = null;
+
+    // Save notes to localStorage.
+    function saveNotes() {
+      localStorage.setItem('notes', JSON.stringify(notes));
+    }
+
+    // Update patient counters.
+    function updatePatientCounters() {
+      const counters = { "Aerocare": 0, "St. Lukes": 0, "OHH": 0 };
+      const regex = /Patient\s*ID\s*(\d+)/i;
+      notes.forEach(note => {
+        const match = note.content.match(regex);
+        if (match && note.facility && counters.hasOwnProperty(note.facility)) {
+          counters[note.facility]++;
+        }
+      });
+      const total = counters["Aerocare"] + counters["St. Lukes"] + counters["OHH"];
+      document.getElementById('patient-counters').textContent =
+        `Aerocare: ${counters["Aerocare"]} | St. Lukes: ${counters["St. Lukes"]} | OHH: ${counters["OHH"]} | Total: ${total}`;
+    }
+
+    // Render notes.
+    function renderNotes(filter = "") {
+      const notesList = document.getElementById('notes-list');
+      notesList.innerHTML = "";
+      const filteredNotes = notes.filter(note => {
+        const searchText = filter.toLowerCase();
+        return (
+          (note.facility && note.facility.toLowerCase().includes(searchText)) ||
+          note.content.toLowerCase().includes(searchText) ||
+          (note.category && note.category.toLowerCase().includes(searchText))
+        );
+      });
+      filteredNotes.forEach(note => {
+        const noteDiv = document.createElement('div');
+        noteDiv.className = "note";
+        const headerDiv = document.createElement('div');
+        headerDiv.className = "note-header";
+        const facilityEl = document.createElement('h3');
+        facilityEl.textContent = note.facility || "No Facility";
+        headerDiv.appendChild(facilityEl);
+        if (note.category) {
+          const catSpan = document.createElement('span');
+          catSpan.textContent = note.category;
+          headerDiv.appendChild(catSpan);
+        }
+        noteDiv.appendChild(headerDiv);
+        const contentDiv = document.createElement('div');
+        contentDiv.className = "note-content";
+        contentDiv.innerHTML = marked.parse(note.content);
+        noteDiv.appendChild(contentDiv);
+        const btnDiv = document.createElement('div');
+        btnDiv.className = "note-buttons";
+        const editBtn = document.createElement('button');
+        editBtn.textContent = "Edit";
+        editBtn.onclick = () => openEditModal(note.id);
+        btnDiv.appendChild(editBtn);
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = "Delete";
+        deleteBtn.onclick = () => deleteNote(note.id);
+        btnDiv.appendChild(deleteBtn);
+        noteDiv.appendChild(btnDiv);
+        notesList.appendChild(noteDiv);
+      });
+      updatePatientCounters();
+    }
+
+    // Add a new note.
+    document.getElementById('add-note').addEventListener('click', () => {
+      const facility = document.getElementById('note-facility').value;
+      const category = document.getElementById('note-category').value;
+      const content = document.getElementById('note-content').value.trim();
+      if (!facility || (!category && !content)) {
+        alert("Please select a facility and provide either a category or some content.");
+        return;
+      }
+      const newNote = {
+        id: Date.now(),
+        facility,
+        category,
+        content
+      };
+      notes.push(newNote);
+      saveNotes();
+      renderNotes();
+      document.getElementById('note-facility').value = "";
+      document.getElementById('note-category').value = "";
+      document.getElementById('note-content').value = "";
+    });
+
+    // Delete note.
+    function deleteNote(id) {
+      if (confirm("Are you sure you want to delete this note?")) {
+        notes = notes.filter(note => note.id !== id);
+        saveNotes();
+        renderNotes(document.getElementById('search-notes').value);
+      }
+    }
+
+    // Open edit modal.
+    function openEditModal(id) {
+      editNoteId = id;
+      const note = notes.find(n => n.id === id);
+      if (!note) return;
+      document.getElementById('edit-note-facility').value = note.facility;
+      document.getElementById('edit-note-category').value = note.category;
+      document.getElementById('edit-note-content').value = note.content;
+      document.getElementById('edit-modal').style.display = "flex";
+    }
+
+    // Save changes from edit modal.
+    document.getElementById('save-note').addEventListener('click', () => {
+      const facility = document.getElementById('edit-note-facility').value;
+      const category = document.getElementById('edit-note-category').value;
+      const content = document.getElementById('edit-note-content').value.trim();
+      if (!facility || (!category && !content)) {
+        alert("Please select a facility and provide either a category or some content.");
+        return;
+      }
+      notes = notes.map(note => {
+        if (note.id === editNoteId) {
+          return { ...note, facility, category, content };
+        }
+        return note;
+      });
+      saveNotes();
+      renderNotes(document.getElementById('search-notes').value);
+      closeEditModal();
+    });
+
+    // Close edit modal.
+    function closeEditModal() {
+      document.getElementById('edit-modal').style.display = "none";
+    }
+    document.getElementById('close-modal').addEventListener('click', closeEditModal);
+    window.addEventListener('click', e => {
+      if (e.target === document.getElementById('edit-modal')) closeEditModal();
+    });
+
+    // Search notes.
+    document.getElementById('search-notes').addEventListener('input', e => {
+      renderNotes(e.target.value);
+    });
+
+    // Export & Import.
+    document.getElementById('export-notes').addEventListener('click', () => {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(notes, null, 2));
+      const a = document.createElement('a');
+      a.href = dataStr;
+      a.download = "notes_backup_" + Date.now() + ".json";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    });
+    document.getElementById('import-notes').addEventListener('click', () => {
+      document.getElementById('file-input').click();
+    });
+    document.getElementById('file-input').addEventListener('change', e => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        try {
+          const importedNotes = JSON.parse(e.target.result);
+          if (Array.isArray(importedNotes)) {
+            notes = importedNotes;
+            saveNotes();
+            renderNotes();
+          } else {
+            alert("Invalid file format");
+          }
+        } catch (error) {
+          alert("Error reading file");
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    // Toggle Light/Dark theme.
+    document.getElementById('toggle-theme').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // Date Calculator.
+    document.getElementById('calc-date').addEventListener('click', () => {
+      const offsetDays = parseInt(document.getElementById('date-offset').value, 10);
+      const op = document.getElementById('date-operation').value;
+      if (isNaN(offsetDays)) {
+        alert("Enter a valid number.");
+        return;
+      }
+      const today = new Date();
+      const resultDate = new Date(today);
+      if (op === "add") {
+        resultDate.setDate(today.getDate() + offsetDays);
+      } else {
+        resultDate.setDate(today.getDate() - offsetDays);
+      }
+      const formatted = (resultDate.getMonth() + 1) + "/" + resultDate.getDate() + "/" + resultDate.getFullYear();
+      document.getElementById('date-result').value = formatted;
+      navigator.clipboard.writeText(formatted);
+    });
+
+    // View Patient IDs (sorted by facility).
+    document.getElementById('view-patient-ids').addEventListener('click', () => {
+      const facilities = { "Aerocare": new Set(), "St. Lukes": new Set(), "OHH": new Set() };
+      const regex = /Patient\s*ID\s*(\d+)/gi;
+      notes.forEach(note => {
+        let match;
+        while ((match = regex.exec(note.content)) !== null) {
+          if (note.facility && facilities.hasOwnProperty(note.facility)) {
+            facilities[note.facility].add(match[1]);
+          }
+        }
+      });
+      let output = "";
+      ["Aerocare", "St. Lukes", "OHH"].forEach(facility => {
+        let ids = Array.from(facilities[facility]).sort((a, b) => a - b);
+        if (ids.length) {
+          output += `<strong>${facility}:</strong><br>${ids.join("<br>")}<br><br>`;
+        }
+      });
+      if (!output) output = "No Patient IDs found.";
+      document.getElementById('patientIDs-list').innerHTML = output;
+      document.getElementById('patientIDs-modal').style.display = "flex";
+    });
+    document.getElementById('close-patientIDs-modal').addEventListener('click', () => {
+      document.getElementById('patientIDs-modal').style.display = "none";
+    });
+    document.getElementById('copy-patientIDs').addEventListener('click', () => {
+      const text = document.getElementById('patientIDs-list').innerText;
+      navigator.clipboard.writeText(text);
+    });
+    window.addEventListener('click', e => {
+      if (e.target === document.getElementById('patientIDs-modal')) {
+        document.getElementById('patientIDs-modal').style.display = "none";
+      }
+    });
+
+    // Font Settings.
+    function updateFontSettings() {
+      const fontFamily = document.getElementById('font-family').value;
+      const fontSize = document.getElementById('font-size').value;
+      if (fontFamily) {
+        document.body.style.fontFamily = fontFamily;
+      }
+      if (fontSize) {
+        document.body.style.fontSize = fontSize;
+      }
+    }
+    document.getElementById('font-family').addEventListener('change', updateFontSettings);
+    document.getElementById('font-size').addEventListener('change', updateFontSettings);
+
+    // Initial render.
+    renderNotes();
+  </script>
+</body>
+</html>
