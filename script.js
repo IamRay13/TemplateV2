@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const actionTextMap = {
         replacementNeeded: {
-           static: `60Month Restart
-Call ahead of time and provide the ETA.
-Do not remove any oxygen equipment included on the delivery ticket to ensure proper billing.
+           static: `Important note for technicians:  
+If the patient refuses to switch out any equipment, do not remove any billing items or oxygen equipment from these two orders. This is necessary to ensure accurate billing and to prevent issues later on.
 
-Switch out the equipment and have the patient sign the delivery ticket (#CODE), the pickup/exchange form (#CODE), and the 60-month letter located in OTL.
+60Month Restart Instructions:  
+- Call the patient ahead of time and provide ETA and switch out the equipment and have the patient sign the delivery ticket (#CODE), the pickup/exchange form (#CODE), and the 60-month letter located in OTL.
 2 liter flow
 
 Set up Autopay if required.
@@ -22,11 +22,13 @@ the best phone number to contact is CODE
 and patient is available on DATE for pick-up and delivery.`
         },
         declinedReplacement: {
-            static: `60Month Restart
-Call ahead of time and provide the ETA.
-Do not remove any oxygen equipment included on the delivery ticket to ensure proper billing.
+            static: `Important note for technicians:  
+If the patient refuses to switch out any equipment, do not remove any billing items or oxygen equipment from these two orders. This is necessary to ensure accurate billing and to prevent issues later on.
 
-RUL Signature only to bill insurance and no need to swap (O₂). Have the patient sign the delivery ticket (#CODE), the pickup/exchange form (#CODE), and the 60-month letter located in OTL.
+60Month Restart Instructions:  
+- Call the patient ahead of time and provide ETA
+
+RUL Signature only to bill insurance and no need to swap O₂. Have the patient sign the delivery ticket (#CODE), the pickup/exchange form (#CODE), and the 60-month letter located in OTL.
 2 liter flow
 
 Set up Autopay if required.
@@ -38,11 +40,11 @@ the best phone number to contact is CODE
 and patient is available on DATE to sign the contract.`
         },
         checkAndReplace: {
-            static: `60Month Restart
-Call ahead of time and provide the ETA.
-Do not remove any oxygen equipment included on the delivery ticket to ensure proper billing.
+            static: `Important note for technicians:  
+If the patient refuses to switch out any equipment, do not remove any billing items or oxygen equipment from these two orders. This is necessary to ensure accurate billing and to prevent issues later on.
 
-Check the O₂ equipment and only switch out if necessary. Have the patient sign the delivery ticket (#CODE), the pickup/exchange form (#CODE), and the 60-month letter located in OTL.
+60Month Restart Instructions:  
+- Call the patient ahead of time and provide ETA, check their O₂ equipment and only switch out if necessary. Have the patient sign the delivery ticket (#CODE), the pickup/exchange form (#CODE), and the 60-month letter located in OTL.
 2 liter flow
 
 Set up Autopay if required.
