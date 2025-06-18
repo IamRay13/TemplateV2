@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const actionTextMap = {
         replacementNeeded: {
-           static: `To Technicians: 
+           static: `Instructions for technicians: 
 If the patient refuses to switch any equipment, do not remove billing items or oxygen equipment from these orders below. This ensures accurate billing and avoids issues later on. 
 
 60Month Restart, call ahead to give ETA, replace equipment, and have the patient sign the delivery ticket (#CODE), pickup/exchange form (#CODE), and 60-month letter in OTL. 
@@ -20,7 +20,7 @@ the best phone number to contact is CODE
 and patient is available on DATE for pick-up and delivery.`
         },
         declinedReplacement: {
-            static: `To Technicians: 
+            static: `Instructions for technicians:
 The patient refuses to switch oxygen equipment, still do not remove billing items or oxygen equipment from these orders below. This ensures accurate billing and avoids issues later on. 
 
 60Month Restart, call ahead to give ETA, RUL Signature only to bill insurance and no need to swap O₂, have the patient sign the delivery ticket (#CODE), pickup/exchange form (#CODE), and 60-month letter in OTL. 
@@ -34,7 +34,7 @@ the best phone number to contact is CODE
 and patient is available on DATE to sign the contract.`
         },
         checkAndReplace: {
-            static: `To Technicians: 
+            static: `Instructions for technicians:
 If the patient refuses to switch any equipment, do not remove billing items or oxygen equipment from these orders below. This ensures accurate billing and avoids issues later on. 
 
 60Month Restart, call ahead to give ETA, check their O₂ equipment and only switch out if necessary, have the patient sign the delivery ticket (#CODE), pickup/exchange form (#CODE), and 60-month letter in OTL. 
@@ -349,8 +349,8 @@ Thank you and have a great day!`
         },
 
        blindDelivery: {
-            static: `To Technicians: 
-If the patient refuses to switch any equipment, do not remove billing items or oxygen equipment from these orders. This ensures accurate billing and avoids issues later on. 
+            static: `Instructions for technicians:
+If the patient refuses to switch any equipment, do not remove billing items or oxygen equipment from these orders below. This ensures accurate billing and avoids issues later on. 
 
 60Month Restart, call ahead to give ETA and proceed to drive by to the address if the patient does not answer the phone, switch O2 equipment, and have the patient sign the delivery ticket (#CODE), pickup/exchange form (#CODE), and 60-month letter in OTL. 
 2 Liter-flow. 
