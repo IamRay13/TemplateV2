@@ -6,15 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const actionTextMap = {
         replacementNeeded: {
-           static: `Important note for technicians:  
-If the patient refuses to switch out any equipment, do not remove any billing items or oxygen equipment from these two orders. This is necessary to ensure accurate billing and to prevent issues later on.
+           static: `To Technicians: 
+If the patient refuses to switch any equipment, do not remove billing items or oxygen equipment from these orders. This ensures accurate billing and avoids issues later on. 
 
-60Month Restart Instructions:  
-- Call the patient ahead of time and provide ETA and switch out the equipment and have the patient sign the delivery ticket (#CODE), the pickup/exchange form (#CODE), and the 60-month letter located in OTL.
-2 liter flow
+60Month Restart, call ahead to give ETA, replace equipment, and have the patient sign the delivery ticket (#CODE), pickup/exchange form (#CODE), and 60-month letter in OTL. 
+2 Liter-flow. 
 
-Set up Autopay if required.
-For any questions, call 484-567-0666.`,
+Set up Autopay if needed. For questions, call 484-567-0666. `,
             dynamic: `[Scheduling] Insurance checked, I explained to the patient the O2 5 YEAR RENEWAL process and the patient understood, will continue with our services and requested for a replacement for the oxygen equipment.
 
 Patient's permanent address is CODE,
@@ -22,17 +20,13 @@ the best phone number to contact is CODE
 and patient is available on DATE for pick-up and delivery.`
         },
         declinedReplacement: {
-            static: `Important note for technicians:  
-If the patient refuses to switch out any equipment, do not remove any billing items or oxygen equipment from these two orders. This is necessary to ensure accurate billing and to prevent issues later on.
+            static: `To Technicians: 
+If the patient refuses to switch any equipment, do not remove billing items or oxygen equipment from these orders. This ensures accurate billing and avoids issues later on. 
 
-60Month Restart Instructions:  
-- Call the patient ahead of time and provide ETA
+60Month Restart, call ahead to give ETA, check their O₂ equipment and only switch out if necessary, have the patient sign the delivery ticket (#CODE), pickup/exchange form (#CODE), and 60-month letter in OTL. 
+2 Liter-flow. 
 
-RUL Signature only to bill insurance and no need to swap O₂. Have the patient sign the delivery ticket (#CODE), the pickup/exchange form (#CODE), and the 60-month letter located in OTL.
-2 liter flow
-
-Set up Autopay if required.
-For any questions, call 484-567-0666.`,
+Set up Autopay if needed. For questions, call 484-567-0666. `,
             dynamic: `[Scheduling] Insurance checked, I explained to the patient the O2 5 YEAR RENEWAL process and the patient understood, will continue with our services but declined getting a replacement.
 
 Patient's permanent address is CODE,
@@ -40,15 +34,13 @@ the best phone number to contact is CODE
 and patient is available on DATE to sign the contract.`
         },
         checkAndReplace: {
-            static: `Important note for technicians:  
-If the patient refuses to switch out any equipment, do not remove any billing items or oxygen equipment from these two orders. This is necessary to ensure accurate billing and to prevent issues later on.
+            static: `To Technicians: 
+If the patient refuses to switch any equipment, do not remove billing items or oxygen equipment from these orders. This ensures accurate billing and avoids issues later on. 
 
-60Month Restart Instructions:  
-- Call the patient ahead of time and provide ETA, check their O₂ equipment and only switch out if necessary. Have the patient sign the delivery ticket (#CODE), the pickup/exchange form (#CODE), and the 60-month letter located in OTL.
-2 liter flow
+60Month Restart, call ahead to give ETA, check their O₂ equipment and only switch out if necessary, have the patient sign the delivery ticket (#CODE), pickup/exchange form (#CODE), and 60-month letter in OTL. 
+2 Liter-flow. 
 
-Set up Autopay if required.
-For any questions, call 484-567-0666.`,
+Set up Autopay if needed. For questions, call 484-567-0666. `,
             dynamic: `[Scheduling] Insurance checked, I explained to the patient the O2 5 YEAR RENEWAL process and the patient understood, will continue with our services but requested that we check the oxygen equipment and only replace if necessary.
 
 Patient's permanent address is CODE,
@@ -357,15 +349,13 @@ Thank you and have a great day!`
         },
 
        blindDelivery: {
-            static: `60Month Restart
-Call ahead of time and provide the ETA.
-Do not remove any oxygen equipment included on the delivery ticket to ensure proper billing.  
+            static: `To Technicians: 
+If the patient refuses to switch any equipment, do not remove billing items or oxygen equipment from these orders. This ensures accurate billing and avoids issues later on. 
 
-Proceed to drive by to the address if the patient does not answer the phone. Switch out the equipment and have the patient sign the delivery ticket (#CODE), the pickup/exchange form (#CODE), and the 60-month letter located in OTL.  
-2 liter flow
+60Month Restart, call ahead to give ETA and proceed to drive by to the address if the patient does not answer the phone, switch O2 equipment, and have the patient sign the delivery ticket (#CODE), pickup/exchange form (#CODE), and 60-month letter in OTL. 
+2 Liter-flow. 
 
-Set up Autopay if required.  
-For any questions, call 484-567-0666.  
+Set up Autopay if needed. For questions, call 484-567-0666.   
 `,
             dynamic: `[Scheduling] We have made several attempts to contact the patient without success. Set them up for blind delivery DATE.
 
