@@ -1147,10 +1147,20 @@ I don’t mean to intrude—I just want to confirm your doctor’s name to ensur
 `
         },
 
-	           CODE: {
-            static: `CODE
+	           priorAuth: {
+            static: `[Scheduling] Sent an email to the local office CODE, to ask them who is the person who works in getting the authorization from the patient's insurance.
 `,
-            dynamic: `CODE`
+            dynamic: `O2 5 YEAR RENEWAL / PRIOR AUTHORIZATION
+
+Hello 
+
+I'm reaching out regarding O2 5 YEAR RENEWAL, we have all physician‐signed documents and have created the order to process and complete the restart, but it’s pending insurance authorization. 
+
+The order was moved to status 3.4 for this purpose, and it’s been in WIP for CODE days. Could someone please assist us with getting the right department and people who process this area? It is important that we complete this process before the documents expire to avoid having to contact the patient's doctor again.
+
+If further details are required, please let us know at your earliest convenience. Your prompt attention to this matter is appreciated.
+
+Thank you`
         },
 	           ownScheduling: {
             static: `Hello @
