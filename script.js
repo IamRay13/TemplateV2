@@ -1129,6 +1129,28 @@ I completely respect your office’s policies. Just to clarify, is there any way
 I understand if this information can’t be shared. Is there another department or process we should go through to confirm the details we need?`
         },
 
+	           authIssue: {
+            static: `What’s needed:  Clinical notes (within 6MONTHS)
+| CMN/SWO Received (Y/N): 
+| Item/s: E1390 & 
+
+| Doctor call: 0/5
+| Patient Call: 0/3
+| Faxes sent: 1/5
+
+| Remark/s: 
+This has been sitting in 1.1 intake processing because authorization team requires clinical notes within 6 months that shows oxygen saturation level. 
+
+We still have the CMN/SWO and it's valid until CODE. 
+
+Sent request to DO for clinical notes "Please fax all clinical notes from the past six months that record the patient's oxygen saturation (SpO₂) readings, including progress notes, vital-sign flow sheets, respiratory therapy records, and any other documentation with SpO₂ values for insurance review and continuity of care." 
+
+Flipped this back to appointment needed.
+`,
+            dynamic: `
+`
+        },
+
 	           projectPatient: {
             static: `[FOR PATIENT]
 Hello, this is Raymond from AdaptHealth and its family of companies on a recorded line. 
