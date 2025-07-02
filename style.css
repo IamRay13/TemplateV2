@@ -1,0 +1,79 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('Images/IMG_7391.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 1200px; /* 💡 Increased from 900px to allow wider content */
+    margin-top: 50px;
+}
+
+.dropdown-label,
+.textarea-label {
+    display: block;
+    margin-bottom: 10px;
+    color: #eee;
+    font-weight: bold;
+}
+
+.styled-dropdown {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 16px;
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 30px;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+}
+
+.styled-dropdown option {
+    background-color: #333;
+    color: #eee;
+}
+
+.textarea-row {
+    display: flex;
+    flex-wrap: wrap; /* 👍 Makes layout responsive on smaller screens */
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.textarea-row > div {
+    flex: 1;
+    min-width: 250px; /* Ensures flexibility while wrapping on smaller viewports */
+}
+
+.styled-textarea {
+    width: 100%; /* ✅ Fill full width of container */
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+    resize: none;
+    overflow: hidden;
+    font-family: "Open Sans", sans-serif;
+}
