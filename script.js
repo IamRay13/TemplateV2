@@ -18,11 +18,7 @@ Exchange HOC with a new one, if possible
 2 Liter-flow
 
 Set up Autopay if needed. For questions, call 484 567 0666.`,
-            dynamic: `[Scheduling] Insurance checked, I explained to the patient the O2 5 YEAR RENEWAL process and the patient understood, will continue with our services and requested for a replacement for the oxygen equipment.
-
-Patient's permanent address is CODE,
-the best phone number to contact is CODE
-and patient is available on DATE for pick-up and delivery.`
+            dynamic: `[Scheduling] Insurance verified. Patient understood the 5-year O2 renewal, will continue services and requested equipment replacement. Permanent address is ADDRESS. Best contact PHONE. Available on DATE for replacement.`
         },
         declinedReplacement: {
             static: `5 YEAR RUL / SIGNATURE ONLY
@@ -37,11 +33,7 @@ Patient declined a replacement but willing to sign the new 5 year service agreem
 2 Liter-flow
 
 Set up Autopay if needed. For questions, call 484 567 0666.`,
-            dynamic: `[Scheduling] Insurance checked, I explained to the patient the O2 5 YEAR RENEWAL process and the patient understood, will continue with our services but declined getting a replacement.
-
-Patient's permanent address is CODE,
-the best phone number to contact is CODE
-and patient is available on DATE to sign the contract.`
+            dynamic: `[Scheduling] Insurance verified. Patient understood the 5-year O2 renewal, will continue services but declined replacement. Address CODE. Contact CODE. Available DATE to sign contract.`
         },
         checkAndReplace: {
             static: `5 YEAR RUL / CHECK ONLY, REPLACE IF NECESSARY
@@ -56,11 +48,7 @@ Check HOC, replace only if necessary
 2 Liter-flow
 
 Set up Autopay if needed. For questions, call 484 567 0666.`,
-            dynamic: `[Scheduling] Insurance checked, I explained to the patient the O2 5 YEAR RENEWAL process and the patient understood, will continue with our services but requested that we check the oxygen equipment and only replace if necessary.
-
-Patient's permanent address is CODE,
-the best phone number to contact is CODE
-and patient is available on DATE for checking the oxygen equipment.`
+            dynamic: `[Scheduling] Insurance verified. Patient understood the 5-year O2 renewal, will continue services but requested an equipment check with replacement only if needed. Address ADDRESS. Contact PHONE. Available DATE for the check.`
         },
 
         
