@@ -54,41 +54,29 @@ Set up Autopay if needed. For questions, call 484 567 0666.`,
         
 
        mailOut: {
-            static: `Subject: O2 5 YEAR RENEWAL
+            static: `Hello
 
-Hello,
+Could you please confirm if the patient’s address is within your service area?
 
-I hope this email finds you well. I am writing to request confirmation on whether the address provided for our patient falls within your service area. 
+The patient is ready to sign the contract for the O2 5-Year Renewal and prefers to receive it by mail. Attached are the necessary documents, please include a self-addressed stamped envelope for the return.
 
-The patient is willing to sign the contract to complete the O2 5 YEAR RENEWAL and prefers to receive the contract via postal mail.
-
-Attached are the necessary documents for this process. Please include a self-addressed stamped envelope for the patient to return the signed documents.
-
-Patient Information:  
-• CODE  
-• SO#CODE  
-• PU ticket#CODE  
-
-If further details are required, please let us know at your earliest convenience. Your prompt attention to this matter is appreciated.
+If you need any additional details, please let me know. Your prompt attention to this matter is appreciated.
 
 Thank you,
-
-
-
 `,
             dynamic: `[Scheduling] This patient is due for her 5-year requalification. We contacted the patient, she declined a replacement at this time, but willing to sign the contract for renewal but prefer to receive it via postal mail. ***Please send the RUL documents on [DATE]`
         },
 
        accountOnhold: {
-            static: `Hello, James!
+            static: `Hello
 
-I hope this email finds you well. I am writing to inquire if you could assist a patient residing at [ADDRESS].
+I hope this email finds you well. I am writing to request confirmation on whether the address provided for our patient falls within your service area.
 
-The patient is due for an O2 5 YEAR RENEWAL, and the account is currently on hold. Should we proceed with creating a new work order for the O2 5 YEAR RENEWAL, or send the account for branch review to address the hold?
+I’m reaching out regarding a patient at [ADDRESS] who is due for an O2 5-Year Renewal. The account is currently on hold, should we proceed with creating a new work order, or would you prefer we send it for branch review to resolve the hold?
 
-If additional details are needed, please let us know. Your prompt attention to this matter is greatly appreciated.
+If you need any additional details, please let me know. Your prompt attention to this matter is appreciated.
 
-Thank you and have a great day!
+Thank you,
 `,
             dynamic: `[Scheduling] The account is on hold, sent an email to CODE, will update once got a response from them.`
         },
@@ -122,20 +110,15 @@ This is about 5-year renewal of your durable medical equipment and we received t
 },
 
        billingIssue: {
-            static: `Hello, Sabrina!
+            static: `Hello
 
-I hope this email finds you well. I am writing to inquire if you could assist a patient residing at ADDRESS
+I hope this email finds you well. I am writing to request confirmation on whether the address provided for our patient falls within your service area.
 
 The patient is due for an O2 5 YEAR RENEWAL. The account is currently on hold, and it's unclear whether this is due to unresolved billing issues or another reason. We need confirmation on whether we can proceed with calling the patient to schedule a pick-up and exchange, or if the patient needs to settle the balance first. Please advise on the necessary steps to take.
 
-If additional details are needed, please let us know. Your prompt attention to this matter is greatly appreciated.
+If you need any additional details, please let me know. Your prompt attention to this matter is appreciated.
 
-Thank you and have a great day!
-
-Personal information:
-StLukes
-
-`,
+Thank you,`,
             dynamic: `[VOICEMAIL]
 
 Hi! This is Raymond from AdaptHealth and its family of companies on a recorded line. 
@@ -211,17 +194,15 @@ Patient SpO2 while wearing 02 at 2LPM with exertion: CODE%
         },
 
        pocAvailability: {
-            static: `Subject: POC Availability
- 
-Hello, Catherine!
- 
-I hope this email finds you well. I am writing to inquire if you could assist a patient residing at [ADDRESS].
- 
-This patient is due for a O2 5 YEAR RENEWAL, and we received a prescription for a POC for the patient and we would like to inquire if we have an available POC for this patient and I have attached the prescription.
- 
-If additional details are needed, please let us know. Your prompt attention to this matter is greatly appreciated.
- 
-Thank you and have a great day!
+            static: `Hello
+
+I hope this email finds you well. I am writing to request confirmation on whether the address provided for our patient falls within your service area.
+
+We received a prescription for a POC and would like to confirm if one is available for this patient. The prescription is attached for your reference.
+
+If you need any additional details, please let me know. Your prompt attention to this matter is appreciated.
+
+Thank you,
 `,
             dynamic: `What’s needed: POC Availability / SWO
 
@@ -235,17 +216,15 @@ Thank you and have a great day!
         },
 
        poc6LPM: {
-            static: `Subject: POC Availability
+            static: `Hello
 
-Hello, Catherine!
+I hope this email finds you well. I am writing to request confirmation on whether the address provided for our patient falls within your service area.
 
-I hope this email finds you well. I am writing to inquire if you could assist a patient residing at [ADDRESS].
+We received a prescription for a Portable Oxygen Concentrator with a requirement of up to 6 LPM. Could you please confirm if we have a unit available that can meet this specification?
 
-We received a prescription for a POC for the patient, indicating a requirement of up to 6 LPM. We would like to confirm if we have a POC that can handle up to 6 LPM?
+If you need any additional details, please let me know. Your prompt attention to this matter is appreciated.
 
-If additional details are needed, please let us know. Your prompt attention to this matter is greatly appreciated.
-
-Thank you and have a great day!
+Thank you,
 `,
             dynamic: `What’s needed: POC Availability / SWO
 
@@ -909,20 +888,15 @@ Thank you,`
        swoCmnexpiry: {
             static: `O2 5 YEAR RENEWAL
 `,
-            dynamic: `Hello, Shawn,
+            dynamic: `Hello
 
-I hope this email finds you well. I am writing to request your assistance with an O2 5-Year Renewal for a patient residing at [ADDRESS]. We need to follow up on the pick-up and exchange process for the patient listed below, as the SWO/CMN we have on record is about to expire on [DATE].
+I hope this email finds you well. I am writing to request confirmation on whether the address provided for our patient falls within your service area.
 
-It is important that we complete this process before the documents expire to avoid having to contact the patient's doctor again. Your help in coordinating the pick-up and ensuring a timely exchange would be greatly appreciated.
+We need your help coordinating the pick-up and exchange for a patient at [ADDRESS] as part of their O2 5-Year Renewal. The current SWO/CMN on file expires on [DATE], so completing this before then would help avoid needing new documents from the doctor.
 
-Patient information:
-CODE
-SO#CODE
-PU ticket#CODE
+If you need any additional details, please let me know. Your prompt attention to this matter is appreciated.
 
-If you require any additional details, please let me know. Thank you very much for your prompt attention to this matter.
-
-Thank you, and have a great day!`
+Thank you,`
         },
 
 	           highLiterflow: {
@@ -1193,22 +1167,17 @@ If further details are required, please let us know at your earliest convenience
 Thank you`
         },
 	           ownScheduling: {
-            static: `Hello @
+            static: `Hello
 
-We received a call from a patient under the branch BRANCHNAME. As we understand that you manage your own scheduling to complete restarts, we have updated the system with the basic information provided below:
+I hope this email finds you well. I am writing to request confirmation on whether the address provided for our patient falls within your service area.
 
-Patient Information  
-Code: CODE  
-SO: CODE  
-PU Ticket: CODE  
+We received a call from a patient under the BRANCHNAME branch. Since you manage your own restarts, we’ve entered the following info into the system:
 
-Address: CODE  
-Best Contact Number: CODE  
-Schedule Date: CODE  
+Please let us know if you'd like us to forward this to dispatch or if you'll contact the patient directly to confirm details like rescheduling, auto-pay, or payment info.
 
-Please let us know whether you would like us to send this to dispatch or if you will be reaching out to the patient directly to gather additional details, such as scheduling for another date, auto-pay setup, or credit card information.
+If you need any additional details, please let me know. Your prompt attention to this matter is appreciated.
 
-Please message us back if there is something that we missed, thank you and have a great day!
+Thank you,
 `,
             dynamic: `[Scheduling] Sent an email to the branch, with all the information for scheduling`
         },
