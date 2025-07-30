@@ -331,14 +331,22 @@ Thank you and have a great day!`
         },
 
        blindDelivery: {
-            static: `5 YEAR RUL / BLIND DELIVERY
+            static: `5-Year Renewal / Blind Delivery
 
-Standard Procedure:
-Please do not remove billing items or oxygen equipment from these orders below. This ensures accurate billing and avoids issues later on and have patient sign delivery ticket #CODE, pickup/exchange ticket #CODE, and the 60-month letter when completing an exchange or restart located in OTL.
+This order is set up for blind delivery due to unsuccessful contact with the patient. Please proceed with delivery to the listed address, even if the patient does not answer the phone.
+
+Important Notes for Delivery:
+This is a 5-Year Oxygen Renewal
+If they've used their equipment for 5 years, offer a replacement
+
+Required Signatures:
+Delivery Ticket – #CODE
+Pickup/Exchange Ticket – #CODE
+60month letter when completing exchange/restart located in OTL.
 
 2 Liter-flow
-
 Set up Autopay if needed. For questions, call 484 567 0666. 
+
 `,
             dynamic: `[Scheduling] We have made several attempts to contact the patient without success. Set them up for blind delivery DATE.
 
