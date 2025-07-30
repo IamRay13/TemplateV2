@@ -9,14 +9,18 @@ document.addEventListener('DOMContentLoaded', function() {
            static: `5 YEAR RUL / REPLACEMENT IS NEEDED
 
 Standard Procedure:
-Please do not remove billing items or oxygen equipment from these orders below. This ensures accurate billing and avoids issues later on and have patient sign delivery ticket #CODE, pickup/exchange ticket #CODE, and the 60-month letter when completing an exchange or restart located in OTL.
+Please do not remove billing items or oxygen equipment from this order to avoid billing issues.
 
 Patient's request:
 Call with ETA
 Exchange HOC with a new one, if possible
 
-2 Liter-flow
+Required Signatures:
+Delivery Ticket – #CODE
+Pickup/Exchange Ticket – #CODE
+60month letter when completing exchange/restart located in OTL.
 
+2 Liter-flow
 Set up Autopay if needed. For questions, call 484 567 0666.`,
             dynamic: `[Scheduling] Insurance verified. Patient understood the 5-year O2 renewal, will continue services and requested equipment replacement. Permanent address is ADDRESS. Best contact PHONE. Available on DATE for replacement.`
         },
@@ -24,14 +28,18 @@ Set up Autopay if needed. For questions, call 484 567 0666.`,
             static: `5 YEAR RUL / SIGNATURE ONLY
 
 Standard Procedure:
-Please do not remove billing items or oxygen equipment from these orders below. This ensures accurate billing and avoids issues later on and have patient sign delivery ticket #CODE, pickup/exchange ticket #CODE, and the 60-month letter when completing an exchange or restart located in OTL.
+Please do not remove billing items or oxygen equipment from this order to avoid billing issues.
 
 Patient's request:
 Call with ETA
 Patient declined a replacement but willing to sign the new 5 year service agreement.
 
-2 Liter-flow
+Required Signatures:
+Delivery Ticket – #CODE
+Pickup/Exchange Ticket – #CODE
+60month letter when completing exchange/restart located in OTL.
 
+2 Liter-flow
 Set up Autopay if needed. For questions, call 484 567 0666.`,
             dynamic: `[Scheduling] Insurance verified. Patient understood the 5-year O2 renewal, will continue services but declined replacement. Address CODE. Contact CODE. Available DATE to sign contract.`
         },
@@ -39,14 +47,18 @@ Set up Autopay if needed. For questions, call 484 567 0666.`,
             static: `5 YEAR RUL / CHECK ONLY, REPLACE IF NECESSARY
 
 Standard Procedure:
-Please do not remove billing items or oxygen equipment from these orders below. This ensures accurate billing and avoids issues later on and have patient sign delivery ticket #CODE, pickup/exchange ticket #CODE, and the 60-month letter when completing an exchange or restart located in OTL.
+Please do not remove billing items or oxygen equipment from this order to avoid billing issues.
 
 Patient's request:
 Call with ETA
 Check HOC, replace only if necessary
 
-2 Liter-flow
+Required Signatures:
+Delivery Ticket – #CODE
+Pickup/Exchange Ticket – #CODE
+60month letter when completing exchange/restart located in OTL.
 
+2 Liter-flow
 Set up Autopay if needed. For questions, call 484 567 0666.`,
             dynamic: `[Scheduling] Insurance verified. Patient understood the 5-year O2 renewal, will continue services but requested an equipment check with replacement only if needed. Address ADDRESS. Contact PHONE. Available DATE for the check.`
         },
@@ -346,7 +358,6 @@ Pickup/Exchange Ticket – #CODE
 
 2 Liter-flow
 Set up Autopay if needed. For questions, call 484 567 0666. 
-
 `,
             dynamic: `[Scheduling] We have made several attempts to contact the patient without success. Set them up for blind delivery DATE.
 
@@ -1173,6 +1184,44 @@ Aerocare
 If further details are required, please let us know at your earliest convenience. Your prompt attention to this matter is appreciated.
 
 Thank you`
+        },
+
+  docsMail: {
+            static: `5 YEAR RUL / SIGNATURE ONLY
+
+Standard Procedure:
+Please have patient sign delivery ticket #CODE, pickup/exchange ticket #CODE, and the 60-month letter when completing an exchange or restart located in OTL.
+
+Patient's request:
+Patient declined a replacement but willing to sign the new 5 year service agreement but prefers to receive it through mail.
+
+2 Liter-flow
+
+Set up Autopay if needed. For questions, call 484 567 0666.`,
+            dynamic: `[Scheduling] Insurance verified. Patient understood the 5-year O2 renewal, will continue services, declined a replacement but willing to sign the new 5 year service agreement but prefers to receive it through mail. Address CODE. Contact CODE.`
+        },
+    docuSign: {
+            static: `5 YEAR RUL / SIGNATURE ONLY
+
+Standard Procedure:
+Please have patient sign delivery ticket #CODE, pickup/exchange ticket #CODE, and the 60-month letter when completing an exchange or restart located in OTL.
+
+Patient's request:
+Patient declined a replacement but willing to sign the new 5 year service agreement but prefers to sign it through DocuSign.
+
+2 Liter-flow
+
+Set up Autopay if needed. For questions, call 484 567 0666.`,
+            dynamic: `[Scheduling] Insurance verified. Patient understood the 5-year O2 renewal, will continue services, declined a replacement but willing to sign the new 5 year service agreement but prefers to sign it through DocuSign. Sent message to Kari for assistance.`
+        },
+
+    CODE: {
+            static: `CODE`,
+            dynamic: `CODE`
+        },
+    CODE: {
+            static: `CODE`,
+            dynamic: `CODE`
         },
 	           ownScheduling: {
             static: `Hello
