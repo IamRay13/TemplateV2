@@ -654,7 +654,12 @@ KY Somerset - 55507
 NY Rochester RSWNY - 53515
 RSWNY Cheektowaga
 `,
-            dynamic: `CODE`
+            dynamic: `The machine you have is a concentrator with a HomeFill unit that sits on top of the concentrator, allowing you to refill your own tanks. Correct?
+
+Unfortunately, the local office is no longer able to provide these units because the manufacturer has discontinued them. The good thing is that the local office can supply you with refilled tanks, so you won’t need to refill them yourself. For example, if you have 5 or 10 tanks and only 2 remain filled, you can place an order before running out completely all you have to do is call us or the local office directly.
+
+Another option is a POC (portable oxygen concentrator), which is a small unit you can carry when going outside. Please note that this requires a prescription from your doctor, and the device provides oxygen up to 4 liters per minute.
+"`
         },
 
        parachute6Mwt: {
